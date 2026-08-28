@@ -6,6 +6,7 @@
   --off-white-deep: #e7e2d7;
   --gold: #aa8750;
   --gold-light: #c6a66f;
+  --muted-on-light: #716c63;
   --line-dark: rgba(242, 239, 231, 0.19);
   --line-light: rgba(32, 32, 28, 0.2);
   color: var(--off-white);
@@ -365,7 +366,7 @@ summary {
 .section-index {
   padding-bottom: 15px;
   border-bottom: 1px solid var(--line-light);
-  color: #716d64;
+  color: var(--muted-on-light);
 }
 
 .section-intro h2 {
@@ -414,7 +415,7 @@ summary {
 }
 
 .contribution-ledger article header span {
-  color: #777269;
+  color: var(--muted-on-light);
   font-family: "Courier New", Courier, monospace;
   font-size: 9px;
   letter-spacing: 0.08em;
@@ -436,7 +437,7 @@ summary {
 }
 
 .contribution-ledger li > span {
-  color: #8b857a;
+  color: var(--muted-on-light);
   font-family: "Courier New", Courier, monospace;
   font-size: 9px;
 }
@@ -456,7 +457,7 @@ summary {
 
 .footnote {
   margin: 18px 0 0;
-  color: #716d64;
+  color: var(--muted-on-light);
   font-size: 11px;
 }
 
@@ -476,7 +477,7 @@ summary {
   grid-template-columns: auto 1fr auto 1fr auto;
   align-items: center;
   gap: 10px;
-  color: #78736a;
+  color: var(--muted-on-light);
   font-family: "Courier New", Courier, monospace;
   font-size: 8px;
   letter-spacing: 0.08em;
