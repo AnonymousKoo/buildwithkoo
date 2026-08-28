@@ -1,22 +1,21 @@
 # BuildWithKoo
 
-Phase 1 foundation for the BuildWithKoo digital product studio website.
+Phase 1 foundation for BuildWithKoo, a selective company-building partnership
+for proven operators ready to turn their skill into a company they can own.
 
 ## Development
 
-Requires Node.js 24 or newer.
+Requires Node.js 20.9 or newer.
 
-```bash
-npm install
-npm run dev
-```
+    npm install
+    npm run dev
 
-The Vite development server defaults to `http://localhost:5173`.
+The development server defaults to http://localhost:3000.
 
 ## Quality checks
 
-```bash
-npm run check
-```
+    npm run check
 
-This runs linting, TypeScript validation, the Vitest suite, and a production-mode compilation check. Deployment and production infrastructure are intentionally outside Phase 1.
+This runs ESLint, strict TypeScript validation, the Vitest suite, and a Next.js
+build verification. Phase 1 contains no backend, application collection,
+Avuhz integration, deployment configuration, or production infrastructure.

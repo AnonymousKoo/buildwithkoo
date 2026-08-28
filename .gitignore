@@ -1,5 +1,7 @@
 node_modules
-dist
+.next
+*.tsbuildinfo
+out
 coverage
 .DS_Store
 *.local
@@ -7,3 +9,4 @@ coverage
 .env
 .env.*
 !.env.example
+.vercel
