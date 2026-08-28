@@ -122,9 +122,11 @@ describe('BuildWithKoo Phase 3A application', () => {
     expect(screen.getByText('jordan@example.com')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Edit About You' })).toBeInTheDocument()
     expect(
-      screen.getByRole('button', { name: 'Submission connection coming next.' }),
+      screen.getByRole('button', { name: 'Submission unavailable in preview' }),
     ).toBeDisabled()
-    expect(screen.getByText('Submission is not active yet.')).toBeInTheDocument()
+    expect(
+      screen.getByText('Applications are not being submitted from this preview.'),
+    ).toBeInTheDocument()
     expect(container.querySelector('form')).not.toBeInTheDocument()
     expect(container.querySelector('[action]')).not.toBeInTheDocument()
     expect(container.querySelector('[href^="mailto:"]')).not.toBeInTheDocument()

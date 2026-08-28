@@ -293,7 +293,7 @@ export function OperatorApplication() {
           <p className="apply-kicker">Application review</p>
           <h1 id="review-title">Review what you’ve shared.</h1>
           <p>
-            Check each section before the submission connection is added in the next phase.
+            Review each section carefully before continuing.
           </p>
         </div>
 
@@ -323,11 +323,11 @@ export function OperatorApplication() {
 
         <div className="review-connection" role="status">
           <div>
-            <p>Submission is not active yet.</p>
+            <p>Applications are not being submitted from this preview.</p>
             <span>Your answers remain only in this browser tab and have not been sent.</span>
           </div>
           <button type="button" disabled>
-            Submission connection coming next.
+            Submission unavailable in preview
           </button>
         </div>
       </section>
@@ -337,7 +337,7 @@ export function OperatorApplication() {
   return (
     <section className="apply-shell" aria-labelledby="apply-title">
       <div className="apply-intro">
-        <p className="apply-kicker">Operator application / Phase 3A</p>
+        <p className="apply-kicker">Operator application</p>
         <h1 id="apply-title">Tell us what you’re great at.</h1>
         <p>
           We review operators, proof, and opportunities individually. This application helps us
