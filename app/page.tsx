@@ -16,6 +16,65 @@ const buildWithKooContributions = [
   'Capital strategy*',
 ]
 
+const assetStages = [
+  'Skill',
+  'Offer',
+  'Brand',
+  'System',
+  'Customers',
+  'Team',
+  'Company',
+  'Asset',
+]
+
+const processStages = [
+  {
+    title: 'Discover',
+    description:
+      'Understand the operator, skill, market, proof, and opportunity.',
+  },
+  {
+    title: 'Validate',
+    description:
+      'Test whether real demand and viable economics exist before overbuilding.',
+  },
+  {
+    title: 'Structure',
+    description:
+      'Define the company, positioning, ownership model, responsibilities, and operating design.',
+  },
+  {
+    title: 'Build',
+    description:
+      'Create the systems, brand, operating infrastructure, and commercial foundation.',
+  },
+  {
+    title: 'Grow',
+    description:
+      'Develop customers, team, repeatability, financial visibility, and enterprise value.',
+  },
+]
+
+const operatorEvidence = [
+  'Proven skill',
+  'Real execution history',
+  'Ownership mindset',
+  'Leadership',
+  'Ambition',
+  'Integrity',
+  'Industry / domain knowledge',
+  'Evidence people value what they do',
+]
+
+const exclusions = [
+  'Business coaching',
+  'Guaranteed funding',
+  'LLC setup',
+  'Someone else to do all the work',
+  'Idea validation with no ability to execute',
+  'Equity without responsibility',
+]
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>
 }
@@ -42,7 +101,7 @@ export default function Home() {
             <strong>We build the company together.</strong>
           </p>
 
-          <p className="hero-description" id="who-we-back">
+          <p className="hero-description">
             BuildWithKoo partners with proven operators ready to turn what they
             know into something bigger.
           </p>
@@ -81,7 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="partnership" id="how-it-works" aria-labelledby="partnership-title">
+      <section className="partnership" id="partnership" aria-labelledby="partnership-title">
         <div className="section-intro">
           <p className="section-index">01 / The partnership</p>
           <h2 id="partnership-title">
@@ -139,25 +198,152 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        className="transformation"
+        id="transformation"
+        aria-labelledby="transformation-title"
+      >
+        <div className="transformation-grid" aria-hidden="true" />
+        <div className="transformation-layout">
+          <div className="transformation-copy">
+            <p className="section-index">02 / Skill to asset</p>
+            <h2 id="transformation-title">
+              Not another job.{' '}
+              <span>An actual company.</span>
+            </h2>
+            <p>
+              BuildWithKoo is about converting proven capability into an
+              independently valuable company—not simply creating more work for
+              the operator.
+            </p>
+          </div>
+
+          <div className="asset-build">
+            <p>Company construction / The path</p>
+            <ol className="asset-sequence" aria-label="Skill to asset progression">
+              {assetStages.map((stage, index) => (
+                <li key={stage}>
+                  <span>0{index + 1}</span>
+                  <strong>{stage}</strong>
+                  {index < assetStages.length - 1 ? (
+                    <i aria-hidden="true">→</i>
+                  ) : null}
+                </li>
+              ))}
+            </ol>
+            <p className="transformation-note">
+              The path depends on proof, demand, and mutual fit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="process" id="how-it-works" aria-labelledby="process-title">
+        <div className="process-intro">
+          <p className="section-index">03 / How it works</p>
+          <div>
+            <h2 id="process-title">Build with discipline, not assumptions.</h2>
+            <p>
+              Five stages move a credible opportunity from operator insight to
+              a functioning company.
+            </p>
+          </div>
+        </div>
+
+        <ol className="process-list">
+          {processStages.map((stage, index) => (
+            <li key={stage.title}>
+              <header>
+                <span>0{index + 1}</span>
+                <span>Stage</span>
+              </header>
+              <h3>{stage.title}</h3>
+              <p>{stage.description}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="operator-fit" id="who-we-back" aria-labelledby="operator-title">
+        <div className="operator-intro">
+          <p className="section-index">04 / Who we back</p>
+          <h2 id="operator-title">We’re looking for people worth building with.</h2>
+          <p>
+            The opportunity matters. The person carrying it matters more. We
+            look for proof that someone can lead, execute, and take
+            responsibility for what gets built.
+          </p>
+        </div>
+
+        <div className="operator-ledger">
+          <p>Evidence we look for</p>
+          <ul>
+            {operatorEvidence.map((signal, index) => (
+              <li key={signal}>
+                <span>0{index + 1}</span>
+                {signal}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="operator-proof">
+          This is about the operator—not only the idea.
+        </p>
+      </section>
+
+      <section className="selectivity" id="not-for" aria-labelledby="selectivity-title">
+        <div className="selectivity-intro">
+          <p className="section-index">05 / Selective by design</p>
+          <div>
+            <h2 id="selectivity-title">This is not a shortcut around the work.</h2>
+            <p>
+              BuildWithKoo is a company-building partnership. It requires an
+              operator ready to keep building, deciding, and taking
+              responsibility alongside us.
+            </p>
+          </div>
+        </div>
+
+        <div className="exclusion-ledger">
+          <p>Not designed for someone looking only for</p>
+          <ul>
+            {exclusions.map((item) => (
+              <li key={item}>
+                <span aria-hidden="true">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="partnership-disclaimer">
+          <span aria-hidden="true" />
+          Applying does not guarantee a partnership.
+        </p>
+      </section>
+
       <section className="application" id="apply" aria-labelledby="application-title">
         <div>
-          <p className="section-index">02 / The next move</p>
+          <p className="section-index">06 / The next move</p>
           <h2 id="application-title">
-            Your skill is the starting point.
-            <span>Ownership is the outcome.</span>
+            Think you’re someone{' '}
+            <span>worth building with?</span>
           </h2>
         </div>
         <div className="application-copy">
           <p>
-            BuildWithKoo is selective by design. We partner where proven
-            ability and a real opportunity can become a company worth owning.
+            Applications are reviewed individually. When the operator, proof,
+            and opportunity appear aligned, strong fits move into a
+            conversation with BuildWithKoo.
           </p>
           <span
             className="button button-primary application-status"
-            aria-label="Apply to Build — application flow coming soon"
+            aria-label="Start your application — application flow coming in Phase 3"
           >
-            Apply to Build
-            <small>Application flow coming soon</small>
+            <span>Start your application</span>
+            <span aria-hidden="true">→</span>
+            <small>Application flow coming in Phase 3</small>
           </span>
         </div>
       </section>
