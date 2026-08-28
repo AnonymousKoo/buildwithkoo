@@ -128,18 +128,17 @@ describe('BuildWithKoo Phase 2', () => {
     ).toBeInTheDocument()
   })
 
-  it('ends with the approved temporary Phase 2 application state', () => {
+  it('connects the homepage application CTA to the Phase 3A route', () => {
     const { container } = render(<Home />)
 
     expect(
       screen.getByRole('heading', { name: 'Think you’re someone worth building with?' }),
     ).toBeInTheDocument()
     expect(screen.getByText(/applications are reviewed individually/i)).toBeInTheDocument()
-    expect(
-      screen.getByLabelText(
-        'Start your application — application flow coming in Phase 3',
-      ),
-    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Start your application' })).toHaveAttribute(
+      'href',
+      '/apply',
+    )
     expect(container.querySelector('form')).not.toBeInTheDocument()
     expect(container.querySelectorAll('h1')).toHaveLength(1)
     expect(container.querySelectorAll('h2')).toHaveLength(6)

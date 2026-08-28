@@ -337,14 +337,10 @@ export default function Home() {
             and opportunity appear aligned, strong fits move into a
             conversation with BuildWithKoo.
           </p>
-          <span
-            className="button button-primary application-status"
-            aria-label="Start your application — application flow coming in Phase 3"
-          >
+          <a className="button button-primary application-status" href="/apply">
             <span>Start your application</span>
             <span aria-hidden="true">→</span>
-            <small>Application flow coming in Phase 3</small>
-          </span>
+          </a>
         </div>
       </section>
     </main>
