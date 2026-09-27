@@ -82,6 +82,7 @@ export const ventures: Venture[] = [
     ],
     outcome: 'Create a durable food-platform foundation that can grow without rebuilding the logic underneath it.',
     now: 'Building the domain and application logic, including how future clients move through the platform.',
+    website: 'https://tablegrid.vercel.app',
   },
 ]
 

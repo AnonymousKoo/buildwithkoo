@@ -41,11 +41,12 @@ describe('BuildWithKoo portfolio homepage', () => {
     expect(within(portfolio!).queryByText(/Hummingbird/i)).not.toBeInTheDocument()
     expect(within(portfolio!).getAllByRole('link', { name: /Venture profile/i })).toHaveLength(3)
     const ventureLiveSites = within(portfolio!).getAllByRole('link', { name: /Live site/i })
-    expect(ventureLiveSites).toHaveLength(2)
+    expect(ventureLiveSites).toHaveLength(3)
     expect(ventureLiveSites.map((link) => link.getAttribute('href'))).toEqual(
       expect.arrayContaining([
         'https://sekinfra.com',
         'https://vyral-rho.vercel.app',
+        'https://tablegrid.vercel.app',
       ]),
     )
     expect(screen.queryByText(/AVUHZ/i)).not.toBeInTheDocument()
