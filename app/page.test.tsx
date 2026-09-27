@@ -55,6 +55,10 @@ describe('BuildWithKoo portfolio homepage', () => {
     expect(within(partners!).getByRole('heading', { name: 'LEGACY BUSINESS CONSULTANTS' })).toBeInTheDocument()
     expect(within(partners!).getByRole('heading', { name: 'YAADBODY' })).toBeInTheDocument()
     expect(within(partners!).getAllByRole('link', { name: /Partner profile/i })).toHaveLength(2)
+    expect(within(partners!).getByRole('link', { name: /Live site/i })).toHaveAttribute(
+      'href',
+      'https://www.reveallending.co/id/12985643628',
+    )
     expect(within(partners!).getByText(/not BuildWithKoo-owned ventures/i)).toBeInTheDocument()
   })
 

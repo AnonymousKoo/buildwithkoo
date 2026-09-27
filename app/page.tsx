@@ -168,9 +168,16 @@ export default function Home() {
                   <span>Relationship</span>
                   <strong>{company.relationship}</strong>
                 </div>
-                <Link href={`/partners/${company.slug}`}>
-                  Partner profile <span aria-hidden="true">→</span>
-                </Link>
+                <div className="partner-card-links">
+                  <Link href={`/partners/${company.slug}`}>
+                    Partner profile <span aria-hidden="true">→</span>
+                  </Link>
+                  {company.website ? (
+                    <a href={company.website} target="_blank" rel="noreferrer">
+                      Live site <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
+                </div>
               </footer>
             </article>
           ))}

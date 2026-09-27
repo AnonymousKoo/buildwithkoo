@@ -37,7 +37,7 @@ export const partnerCompanies: PartnerCompany[] = [
       {
         title: 'Business funding & credit',
         description:
-          'Business-credit development, funding readiness, access to capital options, and positioning for growth.',
+          'Business-credit development and funding readiness, plus access to equipment financing, revenue-based financing, term loans, lines of credit, and real-estate funding options.',
       },
       {
         title: 'Business tax strategy',
@@ -58,6 +58,7 @@ export const partnerCompanies: PartnerCompany[] = [
     ],
     outcome:
       'Build a consulting company that can help owners move from formation and funding to stronger operations, smarter systems, and sustainable growth.',
+    website: 'https://www.reveallending.co/id/12985643628',
   },
   {
     slug: 'yaadbody',
