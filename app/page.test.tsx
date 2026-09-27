@@ -42,7 +42,7 @@ describe('BuildWithKoo portfolio remodel', () => {
     expect(within(portfolio!).getAllByRole('link', { name: /View venture/i })).toHaveLength(3)
   })
 
-  it('exposes the current build board and shared operating layer', () => {
+  it('exposes the current venture build board', () => {
     render(<Home />)
 
     const buildBoard = screen
@@ -51,12 +51,11 @@ describe('BuildWithKoo portfolio remodel', () => {
 
     expect(buildBoard).not.toBeNull()
 
-    for (const item of ['AVUHZ', 'SEKINFRA', 'VYRAL', 'TABLEGRID']) {
+    for (const item of ['SEKINFRA', 'VYRAL', 'TABLEGRID']) {
       expect(within(buildBoard!).getByRole('heading', { name: item })).toBeInTheDocument()
     }
 
-    expect(screen.getByText('Shared operating layer', { selector: '.architecture-infrastructure span' }))
-      .toBeInTheDocument()
+    expect(screen.queryByText(/AVUHZ/i)).not.toBeInTheDocument()
   })
 
   it('presents the six-stage venture build system', () => {

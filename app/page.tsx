@@ -3,13 +3,6 @@ import { ventures } from '../lib/ventures'
 
 const currentBuilds = [
   {
-    name: 'AVUHZ',
-    type: 'Shared operating layer',
-    stage: 'Core build',
-    description:
-      'The autonomous operating system designed to become shared infrastructure across the venture portfolio.',
-  },
-  {
     name: 'SEKINFRA',
     type: 'Business systems',
     stage: 'Operating',
@@ -104,10 +97,6 @@ export default function Home() {
               <span aria-hidden="true">→</span>
             </Link>
           ))}
-          <div className="portfolio-ledger-foot">
-            <span>Shared infrastructure</span>
-            <strong>AVUHZ</strong>
-          </div>
         </div>
       </section>
 
@@ -209,7 +198,7 @@ export default function Home() {
             <h2 id="architecture-title">One portfolio. Multiple ventures. Shared leverage.</h2>
             <p>
               BuildWithKoo is the portfolio layer. The ventures stay independent at the customer
-              level while shared infrastructure can remove duplicated work underneath them.
+              level while the portfolio makes the body of work, build discipline, and direction visible.
             </p>
           </div>
         </div>
@@ -229,11 +218,6 @@ export default function Home() {
                 <strong>{venture.name}</strong>
               </Link>
             ))}
-          </div>
-          <div className="architecture-infrastructure">
-            <span>Shared operating layer</span>
-            <strong>AVUHZ</strong>
-            <small>Infrastructure beneath the portfolio, not another customer-facing venture.</small>
           </div>
         </div>
       </section>
