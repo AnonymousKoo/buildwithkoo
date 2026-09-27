@@ -3,185 +3,113 @@ import { describe, expect, it } from 'vitest'
 import { SiteHeader } from '../components/site-header'
 import Home from './page'
 
-describe('BuildWithKoo Phase 2', () => {
-  it('communicates the approved ownership proposition', () => {
-    render(<Home />)
-
-    expect(
-      screen.getByRole('heading', { level: 1, name: 'Build something you can own.' }),
-    ).toBeInTheDocument()
-    expect(screen.getByText('You bring the skill.')).toBeInTheDocument()
-    expect(screen.getByText('We build the company together.')).toBeInTheDocument()
-    expect(
-      screen.getByLabelText(
-        'Skilled operator plus BuildWithKoo leads to company ownership',
-      ),
-    ).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /Apply to Build/i })).toHaveAttribute(
-      'href',
-      '#apply',
-    )
-    expect(screen.getByRole('link', { name: /See how it works/i })).toHaveAttribute(
-      'href',
-      '#how-it-works',
-    )
-  })
-
-  it('presents the approved partnership contribution narrative', () => {
+describe('BuildWithKoo portfolio remodel', () => {
+  it('positions BuildWithKoo as Koo’s venture portfolio', () => {
     render(<Home />)
 
     expect(
       screen.getByRole('heading', {
-        name: /Being great at what you do and knowing how to build a company/i,
+        level: 1,
+        name: 'I build companies from the system up.',
       }),
     ).toBeInTheDocument()
 
-    const youBring = screen.getByText('You bring').closest('article')
-    const weBring = screen.getByText('We bring').closest('article')
-
-    expect(youBring).not.toBeNull()
-    expect(weBring).not.toBeNull()
-    expect(within(youBring!).getByText('Industry knowledge')).toBeInTheDocument()
-    expect(within(youBring!).getByText('Leadership')).toBeInTheDocument()
-    expect(within(weBring!).getByText('Company strategy')).toBeInTheDocument()
-    expect(within(weBring!).getByText('Capital strategy*')).toBeInTheDocument()
-    expect(screen.getByText('Together, we build the asset.')).toBeInTheDocument()
-    expect(screen.getByText('*Capital depends on the opportunity.')).toBeInTheDocument()
-  })
-
-  it('shows how proven skill can become an independently valuable asset', () => {
-    render(<Home />)
-
-    expect(
-      screen.getByRole('heading', { name: 'Not another job. An actual company.' }),
-    ).toBeInTheDocument()
-
-    const progression = screen.getByRole('list', {
-      name: 'Skill to asset progression',
-    })
-    const stages = Array.from(progression.querySelectorAll('strong')).map(
-      (stage) => stage.textContent,
+    expect(screen.getByText(/home for the ventures, platforms, and operating systems/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Explore the portfolio/i })).toHaveAttribute(
+      'href',
+      '#portfolio',
     )
-
-    expect(stages).toEqual([
-      'Skill',
-      'Offer',
-      'Brand',
-      'System',
-      'Customers',
-      'Team',
-      'Company',
-      'Asset',
-    ])
-    expect(screen.getByText(/independently valuable company/i)).toBeInTheDocument()
-    expect(screen.getByText(/depends on proof, demand, and mutual fit/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /See the build system/i })).toHaveAttribute(
+      'href',
+      '#build-system',
+    )
   })
 
-  it('presents the five-stage company-building process', () => {
+  it('shows only the three approved top-level ventures', () => {
     render(<Home />)
 
-    expect(
-      screen.getByRole('heading', { name: 'Build with discipline, not assumptions.' }),
-    ).toBeInTheDocument()
-    expect(
-      screen.getAllByRole('heading', { level: 3 }).map((heading) => heading.textContent),
-    ).toEqual(['Discover', 'Validate', 'Structure', 'Build', 'Grow'])
-    expect(screen.getByText(/real demand and viable economics/i)).toBeInTheDocument()
-    expect(screen.getByText(/ownership model, responsibilities/i)).toBeInTheDocument()
-    expect(screen.getByText(/financial visibility, and enterprise value/i)).toBeInTheDocument()
-  })
-
-  it('centers operator proof and clearly communicates selectivity', () => {
-    render(<Home />)
-
-    const operatorSection = screen
-      .getByRole('heading', { name: 'We’re looking for people worth building with.' })
+    const portfolio = screen
+      .getByRole('heading', { name: 'Different markets. One build discipline.' })
       .closest('section')
 
-    expect(operatorSection).not.toBeNull()
-    for (const signal of [
-      'Proven skill',
-      'Real execution history',
-      'Ownership mindset',
-      'Leadership',
-      'Integrity',
-      'Evidence people value what they do',
-    ]) {
-      expect(within(operatorSection!).getByText(signal)).toBeInTheDocument()
-    }
-    expect(
-      within(operatorSection!).getByText('This is about the operator—not only the idea.'),
-    ).toBeInTheDocument()
+    expect(portfolio).not.toBeNull()
 
-    for (const exclusion of [
-      'Business coaching',
-      'Guaranteed funding',
-      'LLC setup',
-      'Someone else to do all the work',
-      'Idea validation with no ability to execute',
-      'Equity without responsibility',
-    ]) {
-      expect(screen.getByText(exclusion)).toBeInTheDocument()
+    for (const venture of ['SEKINFRA', 'VYRAL', 'TABLEGRID']) {
+      expect(within(portfolio!).getByRole('heading', { name: venture })).toBeInTheDocument()
     }
-    expect(
-      screen.getByText('Applying does not guarantee a partnership.'),
-    ).toBeInTheDocument()
+
+    expect(within(portfolio!).queryByText(/Hummingbird/i)).not.toBeInTheDocument()
+    expect(within(portfolio!).getAllByRole('link', { name: /View venture/i })).toHaveLength(3)
   })
 
-  it('connects the homepage application CTA to the Phase 3A route', () => {
-    const { container } = render(<Home />)
+  it('exposes the current build board and shared operating layer', () => {
+    render(<Home />)
+
+    const buildBoard = screen
+      .getByRole('heading', { name: 'The portfolio is active, not a museum.' })
+      .closest('section')
+
+    expect(buildBoard).not.toBeNull()
+
+    for (const item of ['AVUHZ', 'SEKINFRA', 'VYRAL', 'TABLEGRID']) {
+      expect(within(buildBoard!).getByRole('heading', { name: item })).toBeInTheDocument()
+    }
+
+    expect(screen.getByText('Shared operating layer', { selector: '.architecture-infrastructure span' }))
+      .toBeInTheDocument()
+  })
+
+  it('presents the six-stage venture build system', () => {
+    render(<Home />)
+
+    const buildSystem = screen
+      .getByRole('heading', { name: 'Build the logic first. Then compound the company.' })
+      .closest('section')
+
+    expect(buildSystem).not.toBeNull()
+
+    const stages = within(buildSystem!)
+      .getAllByRole('heading', { level: 3 })
+      .map((heading) => heading.textContent)
+
+    expect(stages).toEqual([
+      'Thesis',
+      'Domain logic',
+      'System',
+      'Experience',
+      'Operations',
+      'Scale',
+    ])
+  })
+
+  it('keeps the operator partnership as a secondary path', () => {
+    render(<Home />)
 
     expect(
-      screen.getByRole('heading', { name: 'Think you’re someone worth building with?' }),
+      screen.getByRole('heading', { name: 'Have an operator-led opportunity worth building?' }),
     ).toBeInTheDocument()
-    expect(screen.getByText(/applications are reviewed individually/i)).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Start your application' })).toHaveAttribute(
+    expect(screen.getByText(/one part of BuildWithKoo—not the whole brand/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Start the application/i })).toHaveAttribute(
       'href',
       '/apply',
     )
-    expect(container.querySelector('form')).not.toBeInTheDocument()
-    expect(container.querySelectorAll('h1')).toHaveLength(1)
-    expect(container.querySelectorAll('h2')).toHaveLength(6)
   })
 
-  it('contains no fabricated portfolio, contact form, or contact address', () => {
-    const { container } = render(<Home />)
-    const content = container.textContent ?? ''
-
-    for (const rejectedContent of [
-      'Foundry',
-      'Signal',
-      'Common Ground',
-      'Selected work',
-      'Start a project',
-      'digital product studio',
-      'hello@buildwithkoo.com',
-    ]) {
-      expect(content).not.toContain(rejectedContent)
-    }
-
-    expect(container.querySelector('form')).not.toBeInTheDocument()
-    expect(container.querySelector('input, textarea, select')).not.toBeInTheDocument()
-    expect(container.querySelector('[href^="mailto:"]')).not.toBeInTheDocument()
-  })
-
-  it('uses the approved navigation labels and anchors', () => {
+  it('uses portfolio-first navigation', () => {
     render(<SiteHeader />)
 
-    const expectedLinks = [
-      ['The Opportunity', '#opportunity'],
-      ['How It Works', '#how-it-works'],
-      ['Who We Back', '#who-we-back'],
-    ]
-
-    for (const [name, href] of expectedLinks) {
-      const links = screen.getAllByRole('link', { name })
-      expect(links.length).toBeGreaterThan(0)
-      links.forEach((link) => expect(link).toHaveAttribute('href', href))
+    for (const [name, href] of [
+      ['Portfolio', '/#portfolio'],
+      ['Build Board', '/#build-board'],
+      ['Build System', '/#build-system'],
+    ]) {
+      screen.getAllByRole('link', { name }).forEach((link) => {
+        expect(link).toHaveAttribute('href', href)
+      })
     }
 
-    screen
-      .getAllByRole('link', { name: 'Apply to Build' })
-      .forEach((link) => expect(link).toHaveAttribute('href', '#apply'))
+    screen.getAllByRole('link', { name: 'Build With Koo' }).forEach((link) => {
+      expect(link).toHaveAttribute('href', '/apply')
+    })
   })
 })

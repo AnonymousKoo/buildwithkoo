@@ -1,78 +1,62 @@
-const operatorContributions = [
-  'Skill',
-  'Execution',
-  'Experience',
-  'Industry knowledge',
-  'Technical ability',
-  'Leadership',
-]
+import Link from 'next/link'
+import { ventures } from '../lib/ventures'
 
-const buildWithKooContributions = [
-  'Company strategy',
-  'Structure',
-  'Brand & positioning',
-  'Operating systems',
-  'Growth architecture',
-  'Capital strategy*',
-]
-
-const assetStages = [
-  'Skill',
-  'Offer',
-  'Brand',
-  'System',
-  'Customers',
-  'Team',
-  'Company',
-  'Asset',
-]
-
-const processStages = [
+const currentBuilds = [
   {
-    title: 'Discover',
+    name: 'AVUHZ',
+    type: 'Shared operating layer',
+    stage: 'Core build',
     description:
-      'Understand the operator, skill, market, proof, and opportunity.',
+      'The autonomous operating system designed to become shared infrastructure across the venture portfolio.',
   },
   {
-    title: 'Validate',
+    name: 'SEKINFRA',
+    type: 'Business systems',
+    stage: 'Operating',
     description:
-      'Test whether real demand and viable economics exist before overbuilding.',
+      'Turning systems, automation, and execution infrastructure into a stronger operating layer for businesses.',
   },
   {
-    title: 'Structure',
+    name: 'VYRAL',
+    type: 'Gaming platform',
+    stage: 'Platform build',
     description:
-      'Define the company, positioning, ownership model, responsibilities, and operating design.',
+      'Building the umbrella platform, its system layer, and the game experiences that live underneath it.',
   },
   {
-    title: 'Build',
+    name: 'TABLEGRID',
+    type: 'Food platform',
+    stage: 'Domain build',
     description:
-      'Create the systems, brand, operating infrastructure, and commercial foundation.',
-  },
-  {
-    title: 'Grow',
-    description:
-      'Develop customers, team, repeatability, financial visibility, and enterprise value.',
+      'Building the domain and application logic first so the platform has a durable foundation before deeper automation.',
   },
 ]
 
-const operatorEvidence = [
-  'Proven skill',
-  'Real execution history',
-  'Ownership mindset',
-  'Leadership',
-  'Ambition',
-  'Integrity',
-  'Industry / domain knowledge',
-  'Evidence people value what they do',
-]
-
-const exclusions = [
-  'Business coaching',
-  'Guaranteed funding',
-  'LLC setup',
-  'Someone else to do all the work',
-  'Idea validation with no ability to execute',
-  'Equity without responsibility',
+const buildStages = [
+  {
+    title: 'Thesis',
+    description: 'Define the opportunity, the outcome, and why the venture should exist.',
+  },
+  {
+    title: 'Domain logic',
+    description: 'Model the actors, rules, decisions, workflows, and value exchange before adding complexity.',
+  },
+  {
+    title: 'System',
+    description: 'Turn the logic into repeatable infrastructure, automation, and operating leverage.',
+  },
+  {
+    title: 'Experience',
+    description: 'Wrap the system in a product, brand, and experience people can actually use.',
+  },
+  {
+    title: 'Operations',
+    description: 'Build the workflows, ownership, feedback loops, and controls that let the company run.',
+  },
+  {
+    title: 'Scale',
+    description: 'Compound what works across customers, teams, products, and future ventures.',
+  },
 ]
 
 function Arrow() {
@@ -82,181 +66,135 @@ function Arrow() {
 export default function Home() {
   return (
     <main id="main-content">
-      <section className="hero" id="opportunity" aria-labelledby="hero-title">
-        <div className="hero-grid" aria-hidden="true" />
-
-        <div className="hero-copy">
-          <p className="eyebrow">
+      <section className="portfolio-hero" id="home" aria-labelledby="portfolio-hero-title">
+        <div className="portfolio-hero-grid" aria-hidden="true" />
+        <div className="portfolio-hero-copy">
+          <p className="portfolio-kicker">
             <span />
-            A selective company-building partnership
+            Koo&apos;s venture portfolio
           </p>
-
-          <h1 id="hero-title">
-            Build something{' '}
-            <span>you can own.</span>
+          <h1 id="portfolio-hero-title">
+            I build companies{' '}
+            <span>from the system up.</span>
           </h1>
-
-          <p className="hero-proposition">
-            You bring the skill.
-            <strong>We build the company together.</strong>
+          <p className="portfolio-hero-description">
+            BuildWithKoo is the home for the ventures, platforms, and operating systems I&apos;m
+            building—what they are, where they are now, and how the pieces connect.
           </p>
-
-          <p className="hero-description">
-            BuildWithKoo partners with proven operators ready to turn what they
-            know into something bigger.
-          </p>
-
-          <div className="hero-actions">
-            <a className="button button-primary" href="#apply">
-              Apply to Build <Arrow />
+          <div className="portfolio-hero-actions">
+            <a className="button button-primary" href="#portfolio">
+              Explore the portfolio <span aria-hidden="true">↓</span>
             </a>
-            <a className="button button-secondary" href="#how-it-works">
-              See how it works <span aria-hidden="true">↓</span>
+            <a className="button button-secondary" href="#build-system">
+              See the build system <Arrow />
             </a>
           </div>
         </div>
 
-        <div
-          className="ownership-equation"
-          aria-label="Skilled operator plus BuildWithKoo leads to company ownership"
-        >
-          <p className="equation-label">The opportunity</p>
-          <div className="equation-flow">
-            <div>
-              <span>01</span>
-              <strong>Skilled<br />operator</strong>
-            </div>
-            <span className="equation-symbol" aria-hidden="true">+</span>
-            <div>
-              <span>02</span>
-              <strong>BuildWithKoo</strong>
-            </div>
-            <span className="equation-symbol equation-arrow" aria-hidden="true">→</span>
-            <div className="equation-result">
-              <span>03</span>
-              <strong>Company<br />ownership</strong>
-            </div>
+        <div className="portfolio-hero-ledger" aria-label="Current BuildWithKoo portfolio">
+          <div className="portfolio-ledger-head">
+            <span>Portfolio now</span>
+            <span>03 ventures</span>
+          </div>
+          {ventures.map((venture) => (
+            <Link href={`/ventures/${venture.slug}`} key={venture.slug}>
+              <span>{venture.number}</span>
+              <strong>{venture.name}</strong>
+              <small>{venture.status}</small>
+              <span aria-hidden="true">→</span>
+            </Link>
+          ))}
+          <div className="portfolio-ledger-foot">
+            <span>Shared infrastructure</span>
+            <strong>AVUHZ</strong>
           </div>
         </div>
       </section>
 
-      <section className="partnership" id="partnership" aria-labelledby="partnership-title">
-        <div className="section-intro">
-          <p className="section-index">01 / The partnership</p>
-          <h2 id="partnership-title">
-            Being great at what you do and knowing how to build a company are
-            <em> two different skills.</em>
-          </h2>
+      <section className="venture-portfolio" id="portfolio" aria-labelledby="portfolio-title">
+        <div className="portfolio-section-intro">
+          <p className="section-index">01 / Venture portfolio</p>
+          <div>
+            <h2 id="portfolio-title">Different markets. One build discipline.</h2>
+            <p>
+              Each venture keeps its own brand, market, product, and operating model. BuildWithKoo
+              is the layer that shows the body of work as one portfolio.
+            </p>
+          </div>
         </div>
 
-        <div className="contribution-ledger">
-          <article>
-            <header>
-              <p>You bring</p>
-              <span>Your edge</span>
-            </header>
-            <ul>
-              {operatorContributions.map((item, index) => (
-                <li key={item}>
-                  <span>0{index + 1}</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <div className="ledger-joint" aria-hidden="true">
-            <span>+</span>
-          </div>
-
-          <article>
-            <header>
-              <p>We bring</p>
-              <span>The company layer</span>
-            </header>
-            <ul>
-              {buildWithKooContributions.map((item, index) => (
-                <li key={item}>
-                  <span>0{index + 1}</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="footnote">*Capital depends on the opportunity.</p>
-          </article>
-        </div>
-
-        <div className="partnership-outcome">
-          <p>Together, we build the asset.</p>
-          <div aria-hidden="true">
-            <span>Skill</span>
-            <i />
-            <span>Company</span>
-            <i />
-            <strong>Ownership</strong>
-          </div>
+        <div className="venture-card-grid">
+          {ventures.map((venture) => (
+            <article className="venture-card" key={venture.slug}>
+              <header>
+                <span>{venture.number}</span>
+                <span className={`venture-status venture-status-${venture.status.toLowerCase()}`}>
+                  {venture.status}
+                </span>
+              </header>
+              <div>
+                <p>{venture.category}</p>
+                <h3>{venture.name}</h3>
+                <p>{venture.summary}</p>
+              </div>
+              <footer>
+                <span>{venture.stage}</span>
+                <Link href={`/ventures/${venture.slug}`}>
+                  View venture <span aria-hidden="true">→</span>
+                </Link>
+              </footer>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section
-        className="transformation"
-        id="transformation"
-        aria-labelledby="transformation-title"
-      >
-        <div className="transformation-grid" aria-hidden="true" />
-        <div className="transformation-layout">
-          <div className="transformation-copy">
-            <p className="section-index">02 / Skill to asset</p>
-            <h2 id="transformation-title">
-              Not another job.{' '}
-              <span>An actual company.</span>
+      <section className="build-board" id="build-board" aria-labelledby="build-board-title">
+        <div className="build-board-intro">
+          <p className="section-index">02 / Current build board</p>
+          <div>
+            <h2 id="build-board-title">The portfolio is active, not a museum.</h2>
+            <p>
+              BuildWithKoo should show the work while it is moving. This board makes the current
+              focus visible without turning every experiment into a separate brand.
+            </p>
+          </div>
+        </div>
+
+        <div className="build-board-list">
+          {currentBuilds.map((build, index) => (
+            <article key={build.name}>
+              <div className="build-board-number">0{index + 1}</div>
+              <div className="build-board-name">
+                <span>{build.type}</span>
+                <h3>{build.name}</h3>
+              </div>
+              <p>{build.description}</p>
+              <strong>{build.stage}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="build-system" id="build-system" aria-labelledby="build-system-title">
+        <div className="build-system-grid" aria-hidden="true" />
+        <div className="build-system-intro">
+          <p className="section-index">03 / Build system</p>
+          <div>
+            <h2 id="build-system-title">
+              Build the logic first.{' '}
+              <span>Then compound the company.</span>
             </h2>
             <p>
-              BuildWithKoo is about converting proven capability into an
-              independently valuable company—not simply creating more work for
-              the operator.
-            </p>
-          </div>
-
-          <div className="asset-build">
-            <p>Company construction / The path</p>
-            <ol className="asset-sequence" aria-label="Skill to asset progression">
-              {assetStages.map((stage, index) => (
-                <li key={stage}>
-                  <span>0{index + 1}</span>
-                  <strong>{stage}</strong>
-                  {index < assetStages.length - 1 ? (
-                    <i aria-hidden="true">→</i>
-                  ) : null}
-                </li>
-              ))}
-            </ol>
-            <p className="transformation-note">
-              The path depends on proof, demand, and mutual fit.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="process" id="how-it-works" aria-labelledby="process-title">
-        <div className="process-intro">
-          <p className="section-index">03 / How it works</p>
-          <div>
-            <h2 id="process-title">Build with discipline, not assumptions.</h2>
-            <p>
-              Five stages move a credible opportunity from operator insight to
-              a functioning company.
+              The visual layer is never the whole product. The recurring advantage is the logic,
+              systems, and operating structure underneath it.
             </p>
           </div>
         </div>
 
-        <ol className="process-list">
-          {processStages.map((stage, index) => (
+        <ol className="build-system-stages" aria-label="BuildWithKoo venture-building stages">
+          {buildStages.map((stage, index) => (
             <li key={stage.title}>
-              <header>
-                <span>0{index + 1}</span>
-                <span>Stage</span>
-              </header>
+              <span>0{index + 1}</span>
               <h3>{stage.title}</h3>
               <p>{stage.description}</p>
             </li>
@@ -264,83 +202,58 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="operator-fit" id="who-we-back" aria-labelledby="operator-title">
-        <div className="operator-intro">
-          <p className="section-index">04 / Who we back</p>
-          <h2 id="operator-title">We’re looking for people worth building with.</h2>
-          <p>
-            The opportunity matters. The person carrying it matters more. We
-            look for proof that someone can lead, execute, and take
-            responsibility for what gets built.
-          </p>
-        </div>
-
-        <div className="operator-ledger">
-          <p>Evidence we look for</p>
-          <ul>
-            {operatorEvidence.map((signal, index) => (
-              <li key={signal}>
-                <span>0{index + 1}</span>
-                {signal}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <p className="operator-proof">
-          This is about the operator—not only the idea.
-        </p>
-      </section>
-
-      <section className="selectivity" id="not-for" aria-labelledby="selectivity-title">
-        <div className="selectivity-intro">
-          <p className="section-index">05 / Selective by design</p>
+      <section className="portfolio-architecture" id="ecosystem" aria-labelledby="architecture-title">
+        <div className="portfolio-section-intro">
+          <p className="section-index">04 / Portfolio architecture</p>
           <div>
-            <h2 id="selectivity-title">This is not a shortcut around the work.</h2>
+            <h2 id="architecture-title">One portfolio. Multiple ventures. Shared leverage.</h2>
             <p>
-              BuildWithKoo is a company-building partnership. It requires an
-              operator ready to keep building, deciding, and taking
-              responsibility alongside us.
+              BuildWithKoo is the portfolio layer. The ventures stay independent at the customer
+              level while shared infrastructure can remove duplicated work underneath them.
             </p>
           </div>
         </div>
 
-        <div className="exclusion-ledger">
-          <p>Not designed for someone looking only for</p>
-          <ul>
-            {exclusions.map((item) => (
-              <li key={item}>
-                <span aria-hidden="true">—</span>
-                {item}
-              </li>
+        <div className="architecture-map" aria-label="BuildWithKoo portfolio architecture">
+          <div className="architecture-parent">
+            <span>Portfolio layer</span>
+            <strong>BUILDWITHKOO</strong>
+          </div>
+          <div className="architecture-connector" aria-hidden="true">
+            <span />
+          </div>
+          <div className="architecture-ventures">
+            {ventures.map((venture) => (
+              <Link href={`/ventures/${venture.slug}`} key={venture.slug}>
+                <span>{venture.category}</span>
+                <strong>{venture.name}</strong>
+              </Link>
             ))}
-          </ul>
+          </div>
+          <div className="architecture-infrastructure">
+            <span>Shared operating layer</span>
+            <strong>AVUHZ</strong>
+            <small>Infrastructure beneath the portfolio, not another customer-facing venture.</small>
+          </div>
         </div>
-
-        <p className="partnership-disclaimer">
-          <span aria-hidden="true" />
-          Applying does not guarantee a partnership.
-        </p>
       </section>
 
-      <section className="application" id="apply" aria-labelledby="application-title">
+      <section className="build-with-koo" id="build-with-koo" aria-labelledby="build-with-koo-title">
         <div>
-          <p className="section-index">06 / The next move</p>
-          <h2 id="application-title">
-            Think you’re someone{' '}
-            <span>worth building with?</span>
+          <p className="section-index">05 / Build with Koo</p>
+          <h2 id="build-with-koo-title">
+            Have an operator-led opportunity{' '}
+            <span>worth building?</span>
           </h2>
         </div>
-        <div className="application-copy">
+        <div className="build-with-koo-copy">
           <p>
-            Applications are reviewed individually. When the operator, proof,
-            and opportunity appear aligned, strong fits move into a
-            conversation with BuildWithKoo.
+            The partnership track still exists, but it is one part of BuildWithKoo—not the whole
+            brand. If you have proven capability and a company-shaped opportunity, start here.
           </p>
-          <a className="button button-primary application-status" href="/apply">
-            <span>Start your application</span>
-            <span aria-hidden="true">→</span>
-          </a>
+          <Link className="button button-primary" href="/apply">
+            Start the application <Arrow />
+          </Link>
         </div>
       </section>
     </main>

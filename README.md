@@ -1,7 +1,18 @@
 # BuildWithKoo
 
-Phase 1 foundation for BuildWithKoo, a selective company-building partnership
-for proven operators ready to turn their skill into a company they can own.
+BuildWithKoo is Koo's venture portfolio and company-building platform.
+
+The public site now serves three jobs:
+
+- Present the active venture portfolio: Sekinfra, VYRAL, and TableGrid.
+- Show the shared build system and current build board behind the portfolio.
+- Keep the operator partnership path available at `/apply` without making it the entire brand.
+
+## Venture routes
+
+- `/ventures/sekinfra`
+- `/ventures/vyral`
+- `/ventures/tablegrid`
 
 ## Development
 
@@ -17,5 +28,5 @@ The development server defaults to http://localhost:3000.
     npm run check
 
 This runs ESLint, strict TypeScript validation, the Vitest suite, and a Next.js
-build verification. Phase 1 contains no backend, application collection,
-Avuhz integration, deployment configuration, or production infrastructure.
+production build. Application submission remains intentionally inactive until
+the backend / operating workflow is connected.

@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { BrandIdentity } from '@/components/brand-identity'
 import { SiteHeader } from '@/components/site-header'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'BuildWithKoo — Build something you can own',
+  title: 'BuildWithKoo — Venture Portfolio',
   description:
-    'BuildWithKoo partners with proven operators ready to turn what they know into something bigger.',
+    'The venture portfolio for Koo: companies, platforms, systems, and the build process behind them.',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
@@ -21,8 +22,8 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         {children}
         <footer className="site-footer">
           <BrandIdentity />
-          <p>A selective company-building partnership.</p>
-          <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+          <p>Venture portfolio & company-building platform.</p>
+          <Link href="/#home">Back to top <span aria-hidden="true">↑</span></Link>
         </footer>
       </body>
     </html>

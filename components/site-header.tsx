@@ -1,18 +1,19 @@
+import Link from 'next/link'
 import { BrandIdentity } from './brand-identity'
 
 const navigation = [
-  { label: 'The Opportunity', href: '#opportunity' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Who We Back', href: '#who-we-back' },
+  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Build Board', href: '/#build-board' },
+  { label: 'Build System', href: '/#build-system' },
 ]
 
 function NavigationLinks() {
   return (
     <>
       {navigation.map((item) => (
-        <a href={item.href} key={item.href}>
+        <Link href={item.href} key={item.href}>
           {item.label}
-        </a>
+        </Link>
       ))}
     </>
   )
@@ -21,16 +22,16 @@ function NavigationLinks() {
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="brand-link" href="#top">
+      <Link className="brand-link" href="/#home">
         <BrandIdentity />
-      </a>
+      </Link>
 
       <nav className="desktop-nav" aria-label="Main navigation">
         <NavigationLinks />
-        <a className="header-cta" href="#apply">
-          Apply to Build
+        <Link className="header-cta" href="/apply">
+          Build With Koo
           <span aria-hidden="true">↗</span>
-        </a>
+        </Link>
       </nav>
 
       <details className="mobile-menu">
@@ -40,10 +41,10 @@ export function SiteHeader() {
         </summary>
         <nav aria-label="Mobile navigation">
           <NavigationLinks />
-          <a className="header-cta" href="#apply">
-            Apply to Build
+          <Link className="header-cta" href="/apply">
+            Build With Koo
             <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
         </nav>
       </details>
     </header>
