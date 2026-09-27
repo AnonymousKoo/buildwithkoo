@@ -1,14 +1,14 @@
 :root {
-  --charcoal: #151512;
-  --charcoal-soft: #1d1d19;
-  --ink: #20201c;
-  --off-white: #f2efe7;
-  --off-white-deep: #e7e2d7;
-  --gold: #aa8750;
-  --gold-light: #c6a66f;
-  --muted-on-light: #716c63;
-  --line-dark: rgba(242, 239, 231, 0.19);
-  --line-light: rgba(32, 32, 28, 0.2);
+  --charcoal: #071015;
+  --charcoal-soft: #0b171d;
+  --ink: #0c171d;
+  --off-white: #eaf1f4;
+  --off-white-deep: #dce8ed;
+  --gold: #18a9ca;
+  --gold-light: #67d9f3;
+  --muted-on-light: #5f727b;
+  --line-dark: rgba(103, 217, 243, 0.18);
+  --line-light: rgba(12, 23, 29, 0.18);
   color: var(--off-white);
   background: var(--charcoal);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2746,5 +2746,225 @@ summary {
 
   .portfolio-principles h3 {
     font-size: 34px;
+  }
+}
+/* Tech-forward portfolio refinement */
+.portfolio-hero,
+.build-system,
+.venture-detail,
+.build-with-koo {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(24, 169, 202, 0.12), transparent 28%),
+    var(--charcoal);
+}
+
+.portfolio-hero-grid,
+.build-system-grid,
+.venture-detail-grid {
+  opacity: 0.55;
+  background-image:
+    linear-gradient(rgba(103, 217, 243, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103, 217, 243, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.portfolio-kicker,
+.section-index,
+.portfolio-ledger-head,
+.portfolio-ledger-foot,
+.venture-card header > span:first-child,
+.venture-card footer > span,
+.venture-status,
+.build-board-number,
+.build-board-name span,
+.build-board-action strong,
+.venture-detail-topline,
+.venture-stage-card span,
+.venture-detail-section-label {
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.11em;
+}
+
+.portfolio-kicker {
+  color: #86aab4;
+}
+
+.portfolio-kicker > span {
+  box-shadow: 0 0 18px rgba(103, 217, 243, 0.75);
+}
+
+.venture-portfolio {
+  color: var(--off-white);
+  background:
+    linear-gradient(180deg, rgba(103, 217, 243, 0.035), transparent 32%),
+    #0a151b;
+}
+
+.venture-portfolio .section-index,
+.venture-portfolio .portfolio-section-intro > div > p,
+.venture-portfolio .venture-card > div > p:first-child,
+.venture-portfolio .venture-card > div > p:last-child,
+.venture-portfolio .venture-card footer > span {
+  color: #8ea3ac;
+}
+
+.venture-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(103, 217, 243, 0.18);
+  background:
+    linear-gradient(180deg, rgba(103, 217, 243, 0.045), rgba(255, 255, 255, 0.012)),
+    #0b171d;
+  box-shadow: inset 0 1px 0 rgba(103, 217, 243, 0.04);
+}
+
+.venture-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 22px;
+  width: 72px;
+  height: 1px;
+  background: var(--gold-light);
+  box-shadow: 0 0 18px rgba(103, 217, 243, 0.7);
+}
+
+.venture-card:hover {
+  background:
+    linear-gradient(180deg, rgba(103, 217, 243, 0.075), rgba(255, 255, 255, 0.018)),
+    #0c1920;
+}
+
+.venture-card h3 {
+  color: var(--off-white);
+}
+
+.venture-card footer {
+  border-color: rgba(103, 217, 243, 0.16);
+}
+
+.venture-card-footer {
+  align-items: flex-end;
+}
+
+.venture-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.venture-card-links a:last-child {
+  color: var(--gold-light);
+}
+
+.venture-status-active {
+  color: #74efb4;
+  border-color: rgba(116, 239, 180, 0.36);
+  background: rgba(116, 239, 180, 0.035);
+}
+
+.venture-status-building {
+  color: var(--gold-light);
+  border-color: rgba(103, 217, 243, 0.38);
+  background: rgba(103, 217, 243, 0.035);
+}
+
+.portfolio-thesis {
+  color: var(--off-white);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(24, 169, 202, 0.18), transparent 32%),
+    #0d2028;
+}
+
+.portfolio-thesis .section-index {
+  border-color: rgba(103, 217, 243, 0.22);
+  color: #8ea3ac;
+}
+
+.portfolio-thesis-lead > p:last-child,
+.portfolio-principles p {
+  color: #a7bac2;
+}
+
+.portfolio-principles,
+.portfolio-principles article {
+  border-color: rgba(103, 217, 243, 0.2);
+}
+
+.portfolio-principles article > span {
+  color: var(--gold-light);
+}
+
+.build-board-refined {
+  color: var(--off-white);
+  background:
+    linear-gradient(180deg, rgba(103, 217, 243, 0.035), transparent 34%),
+    #081319;
+}
+
+.build-board-refined .section-index,
+.build-board-refined .build-board-intro > div > p,
+.build-board-refined .build-board-number,
+.build-board-refined .build-board-name span,
+.build-board-refined .build-board-list article > p {
+  color: #8ea3ac;
+}
+
+.build-board-refined .section-index,
+.build-board-refined .build-board-list,
+.build-board-refined .build-board-list article {
+  border-color: rgba(103, 217, 243, 0.16);
+}
+
+.build-board-refined .build-board-name h3 {
+  color: var(--off-white);
+}
+
+.build-board-action strong {
+  color: var(--gold-light);
+  border-color: rgba(103, 217, 243, 0.35);
+  background: rgba(103, 217, 243, 0.035);
+}
+
+.venture-detail-topline-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.venture-detail-topline-actions a {
+  color: var(--gold-light);
+}
+
+.venture-site-pending {
+  color: #728790;
+}
+
+.venture-stage-card {
+  background: rgba(103, 217, 243, 0.025);
+}
+
+.button-primary {
+  box-shadow: 0 0 0 1px rgba(103, 217, 243, 0.05), 0 0 30px rgba(24, 169, 202, 0.08);
+}
+
+@media (max-width: 719px) {
+  .venture-detail-topline {
+    align-items: flex-start;
+  }
+
+  .venture-detail-topline-actions {
+    display: grid;
+    justify-items: end;
+    gap: 6px;
+    text-align: right;
+  }
+
+  .venture-card-links {
+    display: grid;
+    justify-items: end;
+    gap: 8px;
   }
 }

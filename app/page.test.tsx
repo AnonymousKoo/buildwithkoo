@@ -29,7 +29,7 @@ describe('BuildWithKoo portfolio homepage', () => {
     render(<Home />)
 
     const portfolio = screen
-      .getByRole('heading', { name: 'Three ventures. Three markets. One standard.' })
+      .getByRole('heading', { name: 'Different ventures. One build discipline.' })
       .closest('section')
 
     expect(portfolio).not.toBeNull()
@@ -39,7 +39,8 @@ describe('BuildWithKoo portfolio homepage', () => {
     }
 
     expect(within(portfolio!).queryByText(/Hummingbird/i)).not.toBeInTheDocument()
-    expect(within(portfolio!).getAllByRole('link', { name: /Enter venture/i })).toHaveLength(3)
+    expect(within(portfolio!).getAllByRole('link', { name: /Venture profile/i })).toHaveLength(3)
+    expect(within(portfolio!).getByRole('link', { name: /Live site/i })).toHaveAttribute('href', 'https://sekinfra.com')
     expect(screen.queryByText(/AVUHZ/i)).not.toBeInTheDocument()
   })
 

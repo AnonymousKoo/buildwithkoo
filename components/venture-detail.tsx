@@ -8,7 +8,16 @@ export function VentureDetail({ venture }: { venture: Venture }) {
         <div className="venture-detail-grid" aria-hidden="true" />
         <div className="venture-detail-topline">
           <Link href="/#portfolio">← Back to portfolio</Link>
-          <span>{venture.number} / {venture.status}</span>
+          <div className="venture-detail-topline-actions">
+            <span>{venture.number} / {venture.status}</span>
+            {venture.website ? (
+              <a href={venture.website} target="_blank" rel="noreferrer">
+                Live website ↗
+              </a>
+            ) : (
+              <span className="venture-site-pending">Website not public yet</span>
+            )}
+          </div>
         </div>
 
         <div className="venture-detail-heading">
@@ -69,9 +78,15 @@ export function VentureDetail({ venture }: { venture: Venture }) {
         <p className="portfolio-kicker">The outcome</p>
         <h2>{venture.outcome}</h2>
         <div>
-          <Link className="button button-primary" href="/#portfolio">
-            Explore the portfolio <span aria-hidden="true">→</span>
-          </Link>
+          {venture.website ? (
+            <a className="button button-primary" href={venture.website} target="_blank" rel="noreferrer">
+              Visit {venture.name} <span aria-hidden="true">↗</span>
+            </a>
+          ) : (
+            <Link className="button button-primary" href="/#portfolio">
+              Explore the portfolio <span aria-hidden="true">→</span>
+            </Link>
+          )}
           <Link className="button button-secondary" href="/apply">
             Build with Koo <span aria-hidden="true">↗</span>
           </Link>

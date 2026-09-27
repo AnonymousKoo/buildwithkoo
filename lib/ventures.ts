@@ -11,6 +11,7 @@ export type Venture = {
   focus: string[]
   outcome: string
   now: string
+  website?: string
 }
 
 export const ventures: Venture[] = [
@@ -35,6 +36,7 @@ export const ventures: Venture[] = [
     ],
     outcome: 'Turn operational complexity into a system a business can actually run on.',
     now: 'Refining the systems, automation, and operating infrastructure behind client delivery.',
+    website: 'https://sekinfra.com',
   },
   {
     slug: 'vyral',
@@ -70,7 +72,7 @@ export const ventures: Venture[] = [
     thesis:
       'The strongest platform starts by understanding the real actors, decisions, workflows, and outcomes in the domain before deeper automation is layered in.',
     portfolioRole:
-      'The food venture in the portfolio and an example of building the thin application layer before the deeper shared system layer.',
+      'The food venture in the portfolio and an example of building the application layer around strong domain logic before adding complexity.',
     focus: [
       'Domain model and application logic',
       'Core user and client journeys',

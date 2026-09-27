@@ -58,7 +58,7 @@ export default function Home() {
         <div className="portfolio-hero-copy">
           <p className="portfolio-kicker">
             <span />
-            Koo&apos;s venture portfolio
+            BuildWithKoo // venture portfolio
           </p>
           <h1 id="portfolio-hero-title">
             I build companies{' '}
@@ -98,10 +98,10 @@ export default function Home() {
         <div className="portfolio-section-intro">
           <p className="section-index">01 / Venture portfolio</p>
           <div>
-            <h2 id="portfolio-title">Three ventures. Three markets. One standard.</h2>
+            <h2 id="portfolio-title">Different ventures. One build discipline.</h2>
             <p>
-              Each company is built for its own market and customer. BuildWithKoo is where the
-              portfolio comes together without flattening the ventures into one brand.
+              The portfolio can expand across markets without losing the way each company is built:
+              outcome first, domain logic before automation, and system before scale.
             </p>
           </div>
         </div>
@@ -120,11 +120,18 @@ export default function Home() {
                 <h3>{venture.name}</h3>
                 <p className="venture-card-outcome-copy">{venture.outcome}</p>
               </div>
-              <footer>
+              <footer className="venture-card-footer">
                 <span>{venture.stage}</span>
-                <Link href={`/ventures/${venture.slug}`}>
-                  Enter venture <span aria-hidden="true">→</span>
-                </Link>
+                <div className="venture-card-links">
+                  <Link href={`/ventures/${venture.slug}`}>
+                    Venture profile <span aria-hidden="true">→</span>
+                  </Link>
+                  {venture.website ? (
+                    <a href={venture.website} target="_blank" rel="noreferrer">
+                      Live site <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
+                </div>
               </footer>
             </article>
           ))}
