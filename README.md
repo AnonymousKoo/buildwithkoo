@@ -5,7 +5,7 @@ BuildWithKoo is Koo's venture portfolio and company-building platform.
 The public site now serves three jobs:
 
 - Present the active venture portfolio: Sekinfra, VYRAL, and TableGrid.
-- Show the shared build system and current build board behind the portfolio.
+- Explain the portfolio thesis, build method, and current public snapshot without exposing internal infrastructure.
 - Keep the operator partnership path available at `/apply` without making it the entire brand.
 
 ## Venture routes

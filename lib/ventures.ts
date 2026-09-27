@@ -10,6 +10,7 @@ export type Venture = {
   portfolioRole: string
   focus: string[]
   outcome: string
+  now: string
 }
 
 export const ventures: Venture[] = [
@@ -33,6 +34,7 @@ export const ventures: Venture[] = [
       'Reusable company-building capabilities',
     ],
     outcome: 'Turn operational complexity into a system a business can actually run on.',
+    now: 'Refining the systems, automation, and operating infrastructure behind client delivery.',
   },
   {
     slug: 'vyral',
@@ -54,6 +56,7 @@ export const ventures: Venture[] = [
       'Systems that can support additional games over time',
     ],
     outcome: 'Build a gaming ecosystem that can expand beyond any one title or server.',
+    now: 'Building the platform layer and the game experiences that live beneath it.',
   },
   {
     slug: 'tablegrid',
@@ -75,6 +78,7 @@ export const ventures: Venture[] = [
       'A clean handoff into deeper automation later',
     ],
     outcome: 'Create a durable food-platform foundation that can grow without rebuilding the logic underneath it.',
+    now: 'Building the domain and application logic, including how future clients move through the platform.',
   },
 ]
 

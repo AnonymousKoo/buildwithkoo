@@ -1,27 +1,21 @@
 import Link from 'next/link'
 import { ventures } from '../lib/ventures'
 
-const currentBuilds = [
+const principles = [
   {
-    name: 'SEKINFRA',
-    type: 'Business systems',
-    stage: 'Operating',
+    title: 'Outcome before feature',
     description:
-      'Turning systems, automation, and execution infrastructure into a stronger operating layer for businesses.',
+      'Start with the result the venture must create. Features only matter if they move that outcome.',
   },
   {
-    name: 'VYRAL',
-    type: 'Gaming platform',
-    stage: 'Platform build',
+    title: 'Logic before automation',
     description:
-      'Building the umbrella platform, its system layer, and the game experiences that live underneath it.',
+      'Model the real decisions, rules, actors, and workflows before trying to automate the work.',
   },
   {
-    name: 'TABLEGRID',
-    type: 'Food platform',
-    stage: 'Domain build',
+    title: 'System before scale',
     description:
-      'Building the domain and application logic first so the platform has a durable foundation before deeper automation.',
+      'Build something repeatable first. Growth should compound a working system, not amplify disorder.',
   },
 ]
 
@@ -32,7 +26,7 @@ const buildStages = [
   },
   {
     title: 'Domain logic',
-    description: 'Model the actors, rules, decisions, workflows, and value exchange before adding complexity.',
+    description: 'Model the actors, rules, decisions, workflows, and value exchange.',
   },
   {
     title: 'System',
@@ -44,7 +38,7 @@ const buildStages = [
   },
   {
     title: 'Operations',
-    description: 'Build the workflows, ownership, feedback loops, and controls that let the company run.',
+    description: 'Build the workflows, ownership, feedback loops, and controls that let it run.',
   },
   {
     title: 'Scale',
@@ -71,23 +65,23 @@ export default function Home() {
             <span>from the system up.</span>
           </h1>
           <p className="portfolio-hero-description">
-            BuildWithKoo is the home for the ventures, platforms, and operating systems I&apos;m
-            building—what they are, where they are now, and how the pieces connect.
+            BuildWithKoo is the public home for the ventures I&apos;m building—the problem,
+            the system, the product, and the path from idea to operating company.
           </p>
           <div className="portfolio-hero-actions">
             <a className="button button-primary" href="#portfolio">
-              Explore the portfolio <span aria-hidden="true">↓</span>
+              View the ventures <span aria-hidden="true">↓</span>
             </a>
-            <a className="button button-secondary" href="#build-system">
-              See the build system <Arrow />
+            <a className="button button-secondary" href="#approach">
+              How I build <Arrow />
             </a>
           </div>
         </div>
 
         <div className="portfolio-hero-ledger" aria-label="Current BuildWithKoo portfolio">
           <div className="portfolio-ledger-head">
-            <span>Portfolio now</span>
-            <span>03 ventures</span>
+            <span>Current portfolio</span>
+            <span>{String(ventures.length).padStart(2, '0')} ventures</span>
           </div>
           {ventures.map((venture) => (
             <Link href={`/ventures/${venture.slug}`} key={venture.slug}>
@@ -104,17 +98,17 @@ export default function Home() {
         <div className="portfolio-section-intro">
           <p className="section-index">01 / Venture portfolio</p>
           <div>
-            <h2 id="portfolio-title">Different markets. One build discipline.</h2>
+            <h2 id="portfolio-title">Three ventures. Three markets. One standard.</h2>
             <p>
-              Each venture keeps its own brand, market, product, and operating model. BuildWithKoo
-              is the layer that shows the body of work as one portfolio.
+              Each company is built for its own market and customer. BuildWithKoo is where the
+              portfolio comes together without flattening the ventures into one brand.
             </p>
           </div>
         </div>
 
         <div className="venture-card-grid">
           {ventures.map((venture) => (
-            <article className="venture-card" key={venture.slug}>
+            <article className="venture-card venture-card-outcome" key={venture.slug}>
               <header>
                 <span>{venture.number}</span>
                 <span className={`venture-status venture-status-${venture.status.toLowerCase()}`}>
@@ -124,12 +118,12 @@ export default function Home() {
               <div>
                 <p>{venture.category}</p>
                 <h3>{venture.name}</h3>
-                <p>{venture.summary}</p>
+                <p className="venture-card-outcome-copy">{venture.outcome}</p>
               </div>
               <footer>
                 <span>{venture.stage}</span>
                 <Link href={`/ventures/${venture.slug}`}>
-                  View venture <span aria-hidden="true">→</span>
+                  Enter venture <span aria-hidden="true">→</span>
                 </Link>
               </footer>
             </article>
@@ -137,28 +131,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="build-board" id="build-board" aria-labelledby="build-board-title">
-        <div className="build-board-intro">
-          <p className="section-index">02 / Current build board</p>
-          <div>
-            <h2 id="build-board-title">The portfolio is active, not a museum.</h2>
-            <p>
-              BuildWithKoo should show the work while it is moving. This board makes the current
-              focus visible without turning every experiment into a separate brand.
-            </p>
-          </div>
+      <section className="portfolio-thesis" id="approach" aria-labelledby="portfolio-thesis-title">
+        <div className="portfolio-thesis-lead">
+          <p className="section-index">02 / The portfolio thesis</p>
+          <h2 id="portfolio-thesis-title">
+            The industries change.{' '}
+            <span>The build discipline does not.</span>
+          </h2>
+          <p>
+            I&apos;m not collecting unrelated side projects. I&apos;m building companies around
+            clear outcomes, real domain logic, and systems that can operate repeatedly.
+          </p>
         </div>
 
-        <div className="build-board-list">
-          {currentBuilds.map((build, index) => (
-            <article key={build.name}>
-              <div className="build-board-number">0{index + 1}</div>
-              <div className="build-board-name">
-                <span>{build.type}</span>
-                <h3>{build.name}</h3>
+        <div className="portfolio-principles">
+          {principles.map((principle, index) => (
+            <article key={principle.title}>
+              <span>0{index + 1}</span>
+              <div>
+                <h3>{principle.title}</h3>
+                <p>{principle.description}</p>
               </div>
-              <p>{build.description}</p>
-              <strong>{build.stage}</strong>
             </article>
           ))}
         </div>
@@ -167,15 +160,15 @@ export default function Home() {
       <section className="build-system" id="build-system" aria-labelledby="build-system-title">
         <div className="build-system-grid" aria-hidden="true" />
         <div className="build-system-intro">
-          <p className="section-index">03 / Build system</p>
+          <p className="section-index">03 / Build method</p>
           <div>
             <h2 id="build-system-title">
-              Build the logic first.{' '}
-              <span>Then compound the company.</span>
+              From opportunity{' '}
+              <span>to operating company.</span>
             </h2>
             <p>
-              The visual layer is never the whole product. The recurring advantage is the logic,
-              systems, and operating structure underneath it.
+              The website, app, or brand is only one layer. The real build is the chain from
+              thesis to logic, system, experience, operations, and scale.
             </p>
           </div>
         </div>
@@ -191,34 +184,35 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="portfolio-architecture" id="ecosystem" aria-labelledby="architecture-title">
-        <div className="portfolio-section-intro">
-          <p className="section-index">04 / Portfolio architecture</p>
+      <section className="build-board build-board-refined" id="now" aria-labelledby="build-board-title">
+        <div className="build-board-intro">
+          <p className="section-index">04 / Now building</p>
           <div>
-            <h2 id="architecture-title">One portfolio. Multiple ventures. Shared leverage.</h2>
+            <h2 id="build-board-title">What is moving right now.</h2>
             <p>
-              BuildWithKoo is the portfolio layer. The ventures stay independent at the customer
-              level while the portfolio makes the body of work, build discipline, and direction visible.
+              A portfolio should show motion without turning the homepage into an internal
+              dashboard. This is the current public snapshot.
             </p>
           </div>
         </div>
 
-        <div className="architecture-map" aria-label="BuildWithKoo portfolio architecture">
-          <div className="architecture-parent">
-            <span>Portfolio layer</span>
-            <strong>BUILDWITHKOO</strong>
-          </div>
-          <div className="architecture-connector" aria-hidden="true">
-            <span />
-          </div>
-          <div className="architecture-ventures">
-            {ventures.map((venture) => (
-              <Link href={`/ventures/${venture.slug}`} key={venture.slug}>
+        <div className="build-board-list">
+          {ventures.map((venture) => (
+            <article key={venture.slug}>
+              <div className="build-board-number">{venture.number}</div>
+              <div className="build-board-name">
                 <span>{venture.category}</span>
-                <strong>{venture.name}</strong>
-              </Link>
-            ))}
-          </div>
+                <h3>{venture.name}</h3>
+              </div>
+              <p>{venture.now}</p>
+              <div className="build-board-action">
+                <strong>{venture.stage}</strong>
+                <Link href={`/ventures/${venture.slug}`} aria-label={`View ${venture.name} venture`}>
+                  View <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -226,17 +220,17 @@ export default function Home() {
         <div>
           <p className="section-index">05 / Build with Koo</p>
           <h2 id="build-with-koo-title">
-            Have an operator-led opportunity{' '}
-            <span>worth building?</span>
+            The portfolio comes first.{' '}
+            <span>Partnership is a separate path.</span>
           </h2>
         </div>
         <div className="build-with-koo-copy">
           <p>
-            The partnership track still exists, but it is one part of BuildWithKoo—not the whole
-            brand. If you have proven capability and a company-shaped opportunity, start here.
+            BuildWithKoo is first a record of what I build. For the right operator-led
+            opportunity, there is also a path to build a company together.
           </p>
           <Link className="button button-primary" href="/apply">
-            Start the application <Arrow />
+            Explore the partnership path <Arrow />
           </Link>
         </div>
       </section>

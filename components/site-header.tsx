@@ -2,9 +2,9 @@ import Link from 'next/link'
 import { BrandIdentity } from './brand-identity'
 
 const navigation = [
-  { label: 'Portfolio', href: '/#portfolio' },
-  { label: 'Build Board', href: '/#build-board' },
-  { label: 'Build System', href: '/#build-system' },
+  { label: 'Ventures', href: '/#portfolio' },
+  { label: 'Approach', href: '/#approach' },
+  { label: 'Now', href: '/#now' },
 ]
 
 function NavigationLinks() {

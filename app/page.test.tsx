@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest'
 import { SiteHeader } from '../components/site-header'
 import Home from './page'
 
-describe('BuildWithKoo portfolio remodel', () => {
-  it('positions BuildWithKoo as Koo’s venture portfolio', () => {
+describe('BuildWithKoo portfolio homepage', () => {
+  it('positions BuildWithKoo as the public home for Koo’s ventures', () => {
     render(<Home />)
 
     expect(
@@ -14,22 +14,22 @@ describe('BuildWithKoo portfolio remodel', () => {
       }),
     ).toBeInTheDocument()
 
-    expect(screen.getByText(/home for the ventures, platforms, and operating systems/i)).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /Explore the portfolio/i })).toHaveAttribute(
+    expect(screen.getByText(/public home for the ventures I'm building/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /View the ventures/i })).toHaveAttribute(
       'href',
       '#portfolio',
     )
-    expect(screen.getByRole('link', { name: /See the build system/i })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /How I build/i })).toHaveAttribute(
       'href',
-      '#build-system',
+      '#approach',
     )
   })
 
-  it('shows only the three approved top-level ventures', () => {
+  it('keeps the portfolio focused on the three approved ventures', () => {
     render(<Home />)
 
     const portfolio = screen
-      .getByRole('heading', { name: 'Different markets. One build discipline.' })
+      .getByRole('heading', { name: 'Three ventures. Three markets. One standard.' })
       .closest('section')
 
     expect(portfolio).not.toBeNull()
@@ -39,30 +39,33 @@ describe('BuildWithKoo portfolio remodel', () => {
     }
 
     expect(within(portfolio!).queryByText(/Hummingbird/i)).not.toBeInTheDocument()
-    expect(within(portfolio!).getAllByRole('link', { name: /View venture/i })).toHaveLength(3)
-  })
-
-  it('exposes the current venture build board', () => {
-    render(<Home />)
-
-    const buildBoard = screen
-      .getByRole('heading', { name: 'The portfolio is active, not a museum.' })
-      .closest('section')
-
-    expect(buildBoard).not.toBeNull()
-
-    for (const item of ['SEKINFRA', 'VYRAL', 'TABLEGRID']) {
-      expect(within(buildBoard!).getByRole('heading', { name: item })).toBeInTheDocument()
-    }
-
+    expect(within(portfolio!).getAllByRole('link', { name: /Enter venture/i })).toHaveLength(3)
     expect(screen.queryByText(/AVUHZ/i)).not.toBeInTheDocument()
   })
 
-  it('presents the six-stage venture build system', () => {
+  it('explains the portfolio thesis before the build method', () => {
+    render(<Home />)
+
+    const thesis = screen
+      .getByRole('heading', { name: 'The industries change. The build discipline does not.' })
+      .closest('section')
+
+    expect(thesis).not.toBeNull()
+
+    for (const principle of [
+      'Outcome before feature',
+      'Logic before automation',
+      'System before scale',
+    ]) {
+      expect(within(thesis!).getByRole('heading', { name: principle })).toBeInTheDocument()
+    }
+  })
+
+  it('presents the six-stage build method', () => {
     render(<Home />)
 
     const buildSystem = screen
-      .getByRole('heading', { name: 'Build the logic first. Then compound the company.' })
+      .getByRole('heading', { name: 'From opportunity to operating company.' })
       .closest('section')
 
     expect(buildSystem).not.toBeNull()
@@ -81,26 +84,43 @@ describe('BuildWithKoo portfolio remodel', () => {
     ])
   })
 
-  it('keeps the operator partnership as a secondary path', () => {
+  it('keeps the current work visible without making it the homepage structure', () => {
+    render(<Home />)
+
+    const now = screen
+      .getByRole('heading', { name: 'What is moving right now.' })
+      .closest('section')
+
+    expect(now).not.toBeNull()
+
+    for (const venture of ['SEKINFRA', 'VYRAL', 'TABLEGRID']) {
+      expect(within(now!).getByRole('heading', { name: venture })).toBeInTheDocument()
+      expect(within(now!).getByRole('link', { name: `View ${venture} venture` })).toBeInTheDocument()
+    }
+  })
+
+  it('keeps partnership secondary to the portfolio', () => {
     render(<Home />)
 
     expect(
-      screen.getByRole('heading', { name: 'Have an operator-led opportunity worth building?' }),
+      screen.getByRole('heading', {
+        name: 'The portfolio comes first. Partnership is a separate path.',
+      }),
     ).toBeInTheDocument()
-    expect(screen.getByText(/one part of BuildWithKoo—not the whole brand/i)).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /Start the application/i })).toHaveAttribute(
+    expect(screen.getByText(/BuildWithKoo is first a record of what I build/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Explore the partnership path/i })).toHaveAttribute(
       'href',
       '/apply',
     )
   })
 
-  it('uses portfolio-first navigation', () => {
+  it('uses venture-first navigation', () => {
     render(<SiteHeader />)
 
     for (const [name, href] of [
-      ['Portfolio', '/#portfolio'],
-      ['Build Board', '/#build-board'],
-      ['Build System', '/#build-system'],
+      ['Ventures', '/#portfolio'],
+      ['Approach', '/#approach'],
+      ['Now', '/#now'],
     ]) {
       screen.getAllByRole('link', { name }).forEach((link) => {
         expect(link).toHaveAttribute('href', href)
