@@ -3333,3 +3333,430 @@ summary {
     gap: 8px;
   }
 }
+/* Executive venture profiles */
+.venture-profile-hero {
+  display: grid;
+  min-height: calc(100svh - 70px);
+  align-content: space-between;
+  gap: 56px;
+  background:
+    radial-gradient(circle at 82% 24%, rgba(255, 107, 53, 0.12), transparent 30%),
+    var(--charcoal);
+}
+
+.venture-profile-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin-top: 52px;
+}
+
+.venture-profile-heading h1 {
+  margin: 18px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(66px, 20vw, 116px);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.84;
+}
+
+.venture-profile-headline {
+  max-width: 900px;
+  margin: 30px 0 0;
+  color: var(--gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 8vw, 50px);
+  font-style: italic;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.venture-profile .venture-detail-summary {
+  max-width: 900px;
+  margin-top: 26px;
+  color: #c9b9aa;
+  font-size: clamp(16px, 4.4vw, 21px);
+  line-height: 1.6;
+}
+
+.venture-brief-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.venture-brief-grid article {
+  display: grid;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.venture-brief-grid article + article {
+  border-top: 1px solid var(--line-dark);
+}
+
+.venture-brief-grid span,
+.venture-thesis-grid > article > span,
+.venture-system-grid > li > span,
+.venture-outcomes-grid > article > span,
+.venture-current-list > li > span {
+  color: #927f6e;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 8px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.venture-brief-grid strong {
+  color: var(--gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.venture-brief-grid p {
+  max-width: 620px;
+  margin: 0;
+  color: #bcae9f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.venture-profile-thesis,
+.venture-system,
+.venture-outcomes,
+.venture-current {
+  display: grid;
+  gap: 46px;
+  padding: 88px 20px 96px;
+}
+
+.venture-profile-thesis {
+  color: var(--ink);
+  background: var(--off-white);
+}
+
+.venture-thesis-grid {
+  display: grid;
+  border-top: 1px solid rgba(33, 26, 22, 0.22);
+}
+
+.venture-thesis-grid article {
+  padding: 34px 0 40px;
+  border-bottom: 1px solid rgba(33, 26, 22, 0.22);
+}
+
+.venture-thesis-grid > article > span {
+  color: #8a6650;
+}
+
+.venture-thesis-grid h2 {
+  max-width: 620px;
+  margin: 32px 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 11vw, 64px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.96;
+}
+
+.venture-thesis-grid p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted-on-light);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.venture-system {
+  color: var(--off-white);
+  background:
+    linear-gradient(180deg, rgba(255, 200, 87, 0.035), transparent 34%),
+    #15110f;
+}
+
+.venture-system .venture-detail-section-label,
+.venture-current .venture-detail-section-label {
+  border-color: var(--line-dark);
+}
+
+.venture-system .venture-detail-section-label p,
+.venture-current .venture-detail-section-label p {
+  color: #927f6e;
+}
+
+.venture-system-content {
+  min-width: 0;
+}
+
+.venture-system-heading h2,
+.venture-outcomes-content > div:first-child h2,
+.venture-current-intro h2 {
+  max-width: 940px;
+  margin: 18px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 11.5vw, 70px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.venture-system-grid {
+  display: grid;
+  gap: 1px;
+  margin: 48px 0 0;
+  padding: 1px;
+  background: rgba(255, 200, 87, 0.16);
+  list-style: none;
+}
+
+.venture-system-grid li {
+  min-height: 230px;
+  padding: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 200, 87, 0.035), transparent 45%),
+    var(--charcoal);
+}
+
+.venture-system-grid h3 {
+  margin: 60px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.venture-system-grid p {
+  margin: 0;
+  color: #ad9f92;
+  font-size: 13px;
+  line-height: 1.62;
+}
+
+.venture-outcomes {
+  color: var(--ink);
+  background: var(--off-white-deep);
+}
+
+.venture-outcomes-content {
+  display: grid;
+  gap: 54px;
+}
+
+.venture-outcomes-grid {
+  display: grid;
+  border-top: 1px solid rgba(33, 26, 22, 0.22);
+}
+
+.venture-outcomes-grid article {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 6px 12px;
+  padding: 24px 0 28px;
+  border-bottom: 1px solid rgba(33, 26, 22, 0.22);
+}
+
+.venture-outcomes-grid article > span {
+  grid-row: 1 / span 2;
+  padding-top: 5px;
+  color: #8a6650;
+}
+
+.venture-outcomes-grid h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.venture-outcomes-grid p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted-on-light);
+  font-size: 13px;
+  line-height: 1.62;
+}
+
+.venture-current {
+  color: var(--off-white);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(255, 107, 53, 0.07), transparent 28%),
+    var(--charcoal-soft);
+}
+
+.venture-current-content {
+  display: grid;
+  gap: 52px;
+}
+
+.venture-current-intro > p:last-child {
+  max-width: 760px;
+  margin: 26px 0 0;
+  color: #b9aa9c;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.venture-current-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-dark);
+  list-style: none;
+}
+
+.venture-current-list li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  min-height: 82px;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.venture-current-list strong {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.venture-profile-close {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 26%, rgba(255, 107, 53, 0.11), transparent 32%),
+    var(--charcoal);
+}
+
+.venture-profile-close > p:nth-of-type(2) {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: #b9aa9c;
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+@media (min-width: 720px) {
+  .venture-profile-hero {
+    min-height: calc(100svh - 78px);
+    gap: 76px;
+    padding: 50px 4vw 62px;
+  }
+
+  .venture-profile-heading {
+    margin-top: 70px;
+  }
+
+  .venture-profile-heading h1 {
+    font-size: clamp(108px, 13vw, 190px);
+  }
+
+  .venture-profile-headline {
+    max-width: 1050px;
+    font-size: clamp(42px, 5.2vw, 72px);
+  }
+
+  .venture-profile .venture-detail-summary {
+    font-size: 20px;
+  }
+
+  .venture-brief-grid {
+    grid-template-columns: 0.55fr 1fr 1fr;
+  }
+
+  .venture-brief-grid article {
+    padding: 24px 24px 26px 0;
+  }
+
+  .venture-brief-grid article + article {
+    padding-left: 24px;
+    border-top: 0;
+    border-left: 1px solid var(--line-dark);
+  }
+
+  .venture-profile-thesis,
+  .venture-system,
+  .venture-outcomes,
+  .venture-current {
+    grid-template-columns: minmax(170px, 0.32fr) minmax(0, 1fr);
+    gap: 6vw;
+    padding: 122px 4vw 130px;
+  }
+
+  .venture-thesis-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-bottom: 1px solid rgba(33, 26, 22, 0.22);
+  }
+
+  .venture-thesis-grid article {
+    min-height: 430px;
+    padding: 38px 5vw 44px 0;
+    border-bottom: 0;
+  }
+
+  .venture-thesis-grid article + article {
+    padding-right: 0;
+    padding-left: 5vw;
+    border-left: 1px solid rgba(33, 26, 22, 0.22);
+  }
+
+  .venture-system-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 66px;
+  }
+
+  .venture-system-grid li {
+    min-height: 280px;
+    padding: 26px;
+  }
+
+  .venture-outcomes-content {
+    grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1fr);
+    gap: 7vw;
+    align-items: start;
+  }
+
+  .venture-outcomes-grid {
+    margin-top: 4px;
+  }
+
+  .venture-current-content {
+    grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1fr);
+    gap: 7vw;
+    align-items: start;
+  }
+
+  .venture-profile-close > p:nth-of-type(2) {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1180px) {
+  .venture-system-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .venture-system-grid li {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 719px) {
+  .venture-profile .venture-detail-topline {
+    display: grid;
+    justify-content: stretch;
+    gap: 12px;
+  }
+
+  .venture-profile .venture-detail-topline-actions {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .venture-profile-heading h1 {
+    font-size: clamp(48px, 14vw, 64px);
+    letter-spacing: -0.055em;
+  }
+}
