@@ -5,7 +5,7 @@ import { getVenture } from '../../../lib/ventures'
 const venture = getVenture('hummingbird-storyhouse')!
 
 export const metadata: Metadata = {
-  title: 'Hummingbird Storyhouse — BuildWithKoo',
+  title: 'Hummingbird Storyhouse | BuildWithKoo',
   description: venture.summary,
 }
 

@@ -119,7 +119,7 @@ export function VentureDetail({ venture }: { venture: Venture }) {
         <div className="venture-current-content">
           <div className="venture-current-intro">
             <p className="portfolio-kicker">Stage reality</p>
-            <h2 id={venture.slug + '-current-title'}>What exists now—and what is being built next.</h2>
+            <h2 id={venture.slug + '-current-title'}>What exists now and what is being built next.</h2>
             <p>{venture.stageNote}</p>
           </div>
 

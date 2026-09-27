@@ -5,7 +5,7 @@ import { getVenture } from '../../../lib/ventures'
 const venture = getVenture('sekinfra')!
 
 export const metadata: Metadata = {
-  title: 'SEKINFRA — BuildWithKoo',
+  title: 'SEKINFRA | BuildWithKoo',
   description: venture.summary,
 }
 

@@ -66,7 +66,7 @@ export default function Home() {
             <span>from the system up.</span>
           </h1>
           <p className="portfolio-hero-description">
-            BuildWithKoo is the public home for companies I build and companies I help build—the
+            BuildWithKoo is the public home for companies I build and companies I help build. The
             thesis, operating logic, product, and path from idea to an operating company.
           </p>
           <div className="portfolio-hero-actions">
@@ -208,7 +208,7 @@ export default function Home() {
             <h2 id="partners-title">Partner companies. Built together.</h2>
             <p>
               These are not BuildWithKoo-owned ventures. They are companies where I am contributing
-              to the build—strategy, systems, technology, operating structure, or a combination of them.
+              to the build through strategy, systems, technology, operating structure, or a combination of them.
             </p>
           </div>
         </div>

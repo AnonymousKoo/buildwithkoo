@@ -6,7 +6,7 @@ import { SiteHeader } from '@/components/site-header'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'BuildWithKoo — Venture Portfolio',
+  title: 'BuildWithKoo | Venture Portfolio',
   description:
     'The venture portfolio for Koo: companies, platforms, systems, and the build process behind them.',
 }

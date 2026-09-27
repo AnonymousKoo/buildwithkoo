@@ -5,7 +5,7 @@ import { getPartnerCompany } from '../../../lib/partners'
 const company = getPartnerCompany('yaadbody')!
 
 export const metadata: Metadata = {
-  title: 'YaadBody — Built With Koo',
+  title: 'YaadBody | Built With Koo',
   description: company.summary,
 }
 
