@@ -273,82 +273,88 @@ export const ventures: Venture[] = [
     number: '04',
     name: 'HUMMINGBIRD STORYHOUSE',
     vertical: 'Media & culture',
-    category: 'Multimedia + media systems',
+    category: 'Media + marketing company',
     status: 'Building',
-    stage: 'Media system / originals build',
+    stage: 'Media + marketing system / originals build',
     headline: 'Stories don’t sit still. Neither do we.',
     summary:
-      'Hummingbird Storyhouse is a Black-owned multimedia company building stories, media systems, and original worlds designed to move through culture rather than disappear into a feed.',
+      'Hummingbird Storyhouse builds stories, campaigns, media systems, and growth loops designed to move people and move business.',
     audience:
-      'Brands, creators, communities, and audiences that need culturally fluent storytelling with strategy, production, distribution, and learning connected from the start.',
+      'Brands, creators, and culturally fluent businesses that need strategy, creative, production, distribution, conversion, and measurement to work as one connected system.',
     model:
-      'A media operating company that connects strategy, creative development, production, creator partnerships, distribution, audience intelligence, and owned IP into one compounding loop.',
+      'A media + marketing operating company that connects the business objective, audience, offer, creative, production, distribution, conversion, and learning in one loop.',
     problem:
-      'Creative work is often treated as a stream of disconnected deliverables. Strategy lives in one place, production in another, distribution happens late, and audience learning rarely compounds into the next release.',
+      'Great creative can earn attention and still fail to create business value when the objective, audience, offer, channel, call to action, conversion path, and measurement are designed separately.',
     thesis:
-      'A strong story should become more than one asset. When strategy, production, release, audience signals, and learning operate as one system, every release can strengthen the next one while creating room for owned worlds and intellectual property.',
-    systemTitle: 'Make the feeling travel farther than the format.',
+      'Media earns attention. Marketing gives that attention somewhere to go. Hummingbird designs the story, audience, offer, channel, action, and measurement together so each release can move people, produce useful business signals, and make the next cycle smarter.',
+    systemTitle: 'Position. Create. Produce. Distribute. Convert. Learn.',
     system: [
       {
-        title: 'Discover',
-        description: 'Find the real objective, cultural opening, audience truth, and the feeling or action the story should create.',
+        title: 'Position',
+        description: 'Connect the business outcome, audience need, offer, positioning, message, and channel role before the creative takes shape.',
       },
       {
-        title: 'Build',
-        description: 'Turn the strategy into the story, formats, creative direction, makers, and measurement plan.',
+        title: 'Create',
+        description: 'Develop the core idea, formats, treatments, scripts, visual language, and creator approach around one strategic direction.',
       },
       {
         title: 'Produce',
-        description: 'Create the films, audio, editorial, visual language, and multimedia assets the idea actually needs.',
+        description: 'Turn the creative system into films, shorts, stills, audio, editorial, and other native expressions that earn attention.',
       },
       {
-        title: 'Release',
-        description: 'Sequence the work for the channels, moments, communities, and formats where the story can travel.',
+        title: 'Distribute',
+        description: 'Engineer the release across social, search, email, creators, partnerships, paid media, and web in the right shape and sequence.',
+      },
+      {
+        title: 'Convert',
+        description: 'Give attention somewhere to go through campaigns, funnel paths, calls to action, lifecycle touchpoints, and useful experiments.',
       },
       {
         title: 'Learn',
-        description: 'Read attention and behavior as evidence instead of chasing surface-level algorithm signals.',
-      },
-      {
-        title: 'Compound',
-        description: 'Feed the learning forward so the next release starts smarter and the media system grows more valuable over time.',
+        description: 'Read attention, retention, intent, leads, conversion, and value together so the next creative and marketing decision starts with evidence.',
       },
     ],
-    outcomesTitle: 'Creative work that compounds instead of disappearing.',
+    outcomesTitle: 'Attention is only the beginning.',
     outcomes: [
       {
-        title: 'Stronger point of view',
-        description: 'Anchor the work in cultural truth and a clear creative position rather than generic content volume.',
+        title: 'Audience growth',
+        description: 'Use strong stories and distribution to earn relevant attention and build an audience around a clear point of view.',
       },
       {
-        title: 'Connected distribution',
-        description: 'Design the release alongside the story so the work arrives in the right shape, sequence, and place.',
+        title: 'Qualified leads',
+        description: 'Turn useful interest into identifiable relationships with people who fit the business or campaign objective.',
       },
       {
-        title: 'Audience intelligence',
-        description: 'Turn what people watch, hold, share, and act on into useful signals for the next creative decision.',
+        title: 'Bookings & signups',
+        description: 'Design a clear next step so attention can become an action the business can measure.',
       },
       {
-        title: 'Reusable media systems',
-        description: 'Build repeatable ways to move from strategy through production, release, and learning without rebuilding the process every time.',
+        title: 'Purchases & conversion',
+        description: 'Connect creative, offer, channel, and conversion paths so media can contribute to commercial outcomes.',
       },
       {
-        title: 'Owned worlds & IP',
-        description: 'Develop original concepts with enough depth to grow across film, series, audio, editorial, and emerging formats.',
+        title: 'Retention & value',
+        description: 'Use lifecycle touchpoints and response signals to learn what keeps the right audience engaged over time.',
+      },
+      {
+        title: 'Owned media & IP',
+        description: 'Build original worlds with the depth to expand across films, series, podcasts, editorial, digital formats, and emerging media.',
       },
     ],
     stageNote:
-      'The public Storyhouse experience is live and presents strategy, creative development, multimedia production, creator partnerships, distribution, audience intelligence, and originals as one system. Selected concepts and original IP are still being developed inside that ecosystem.',
+      'The public Storyhouse experience presents the full media + marketing model: brand, audience and marketing strategy; creative development; video and multimedia production; creator partnerships; channel distribution; growth marketing; audience and performance intelligence; and originals and IP. HSH / Original 001, “The spaces between home,” is currently presented as an in-development documentary series.',
     focus: [
-      'Brand and content strategy tied to cultural truth and audience behavior',
-      'Video and multimedia production designed as part of a larger release system',
-      'Creator partnerships, distribution, and audience intelligence',
-      'Original worlds and intellectual property that can expand across formats',
+      'Brand, audience, and marketing strategy tied to a defined business outcome',
+      'Creative development and video + multimedia production',
+      'Creator partnerships and channel distribution across the release system',
+      'Growth marketing, conversion paths, and lifecycle touchpoints',
+      'Audience and performance intelligence across media and business signals',
+      'Originals and IP designed to grow across formats',
     ],
     outcome:
-      'A media company where every release can build creative equity, audience understanding, and owned IP instead of ending as a one-off asset.',
+      'A media + marketing company where one strong idea can become a story, a release system, a conversion path, a learning loop, and eventually media worth owning.',
     now:
-      'Building Hummingbird Storyhouse as both a client-facing media operating company and an engine for original stories, worlds, and intellectual property.',
+      'Building the Storyhouse operating model, client-facing campaign system, growth intelligence loop, and original IP so creative work can move both culture and business.',
     website: 'https://hummingbird-storyhouse.vercel.app',
   },
 ]
