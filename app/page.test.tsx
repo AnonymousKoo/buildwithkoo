@@ -45,7 +45,7 @@ describe('BuildWithKoo portfolio homepage', () => {
     expect(ventureLiveSites.map((link) => link.getAttribute('href'))).toEqual(
       expect.arrayContaining([
         'https://sekinfra.com',
-        'https://vyral.vercel.app',
+        'https://vyral-rho.vercel.app',
       ]),
     )
     expect(screen.queryByText(/AVUHZ/i)).not.toBeInTheDocument()

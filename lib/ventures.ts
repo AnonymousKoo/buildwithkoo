@@ -59,7 +59,7 @@ export const ventures: Venture[] = [
     ],
     outcome: 'Build a gaming ecosystem that can expand beyond any one title or server.',
     now: 'Building the platform layer and the game experiences that live beneath it.',
-    website: 'https://vyral.vercel.app',
+    website: 'https://vyral-rho.vercel.app',
   },
   {
     slug: 'tablegrid',
