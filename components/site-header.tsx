@@ -3,8 +3,8 @@ import { BrandIdentity } from './brand-identity'
 
 const navigation = [
   { label: 'Ventures', href: '/#portfolio' },
+  { label: 'Partners', href: '/#partners' },
   { label: 'Approach', href: '/#approach' },
-  { label: 'Now', href: '/#now' },
 ]
 
 function NavigationLinks() {

@@ -14,7 +14,7 @@ describe('BuildWithKoo portfolio homepage', () => {
       }),
     ).toBeInTheDocument()
 
-    expect(screen.getByText(/public home for the ventures I'm building/i)).toBeInTheDocument()
+    expect(screen.getByText(/companies I build and companies I help build/i)).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /View the ventures/i })).toHaveAttribute(
       'href',
       '#portfolio',
@@ -42,6 +42,20 @@ describe('BuildWithKoo portfolio homepage', () => {
     expect(within(portfolio!).getAllByRole('link', { name: /Venture profile/i })).toHaveLength(3)
     expect(within(portfolio!).getByRole('link', { name: /Live site/i })).toHaveAttribute('href', 'https://sekinfra.com')
     expect(screen.queryByText(/AVUHZ/i)).not.toBeInTheDocument()
+  })
+
+  it('separates partner companies from owned ventures', () => {
+    render(<Home />)
+
+    const partners = screen
+      .getByRole('heading', { name: 'Partner companies. Built together.' })
+      .closest('section')
+
+    expect(partners).not.toBeNull()
+    expect(within(partners!).getByRole('heading', { name: 'LEGACY CONSULTING' })).toBeInTheDocument()
+    expect(within(partners!).getByRole('heading', { name: 'YAADBODY' })).toBeInTheDocument()
+    expect(within(partners!).getAllByRole('link', { name: /Partner profile/i })).toHaveLength(2)
+    expect(within(partners!).getByText(/not BuildWithKoo-owned ventures/i)).toBeInTheDocument()
   })
 
   it('explains the portfolio thesis before the build method', () => {
@@ -120,8 +134,8 @@ describe('BuildWithKoo portfolio homepage', () => {
 
     for (const [name, href] of [
       ['Ventures', '/#portfolio'],
+      ['Partners', '/#partners'],
       ['Approach', '/#approach'],
-      ['Now', '/#now'],
     ]) {
       screen.getAllByRole('link', { name }).forEach((link) => {
         expect(link).toHaveAttribute('href', href)

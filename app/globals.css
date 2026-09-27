@@ -2968,3 +2968,206 @@ summary {
     gap: 8px;
   }
 }
+/* Partner-company layer */
+.partner-companies {
+  padding: 90px 20px 96px;
+  color: var(--off-white);
+  background:
+    radial-gradient(circle at 82% 12%, rgba(103, 217, 243, 0.11), transparent 28%),
+    #061117;
+}
+
+.partner-companies-intro .section-index {
+  color: #8ea3ac;
+  border-color: rgba(103, 217, 243, 0.16);
+}
+
+.partner-companies-intro > div > p {
+  color: #9bb0b9;
+}
+
+.partner-card-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.partner-card {
+  position: relative;
+  display: grid;
+  min-height: 410px;
+  align-content: space-between;
+  gap: 34px;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(103, 217, 243, 0.2);
+  background:
+    linear-gradient(135deg, rgba(103, 217, 243, 0.07), transparent 34%),
+    rgba(10, 25, 32, 0.96);
+}
+
+.partner-card::after {
+  content: "";
+  position: absolute;
+  right: -52px;
+  bottom: -52px;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(103, 217, 243, 0.13);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 28px rgba(103, 217, 243, 0.025),
+    0 0 0 56px rgba(103, 217, 243, 0.015);
+  pointer-events: none;
+}
+
+.partner-card header,
+.partner-card footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.partner-card header span,
+.partner-card footer span {
+  color: #79909a;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 8px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.partner-card header span:last-child {
+  color: var(--gold-light);
+}
+
+.partner-card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.partner-card-body > p:first-child {
+  margin: 0 0 14px;
+  color: #8ea3ac;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.partner-card h3 {
+  max-width: 760px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 11vw, 66px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.94;
+}
+
+.partner-card-body > p:last-child {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: #a4b6bd;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.partner-card footer {
+  padding-top: 20px;
+  border-top: 1px solid rgba(103, 217, 243, 0.17);
+}
+
+.partner-card footer > div {
+  display: grid;
+  gap: 5px;
+}
+
+.partner-card footer strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.partner-card footer > a {
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.partner-detail {
+  background: var(--charcoal);
+}
+
+.partner-detail-hero {
+  position: relative;
+  min-height: calc(84svh - 70px);
+  padding: 38px 20px 58px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 22%, rgba(103, 217, 243, 0.13), transparent 30%),
+    var(--charcoal);
+}
+
+.partner-detail-heading {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 34px;
+  margin-top: 62px;
+}
+
+.partner-detail-heading h1 {
+  margin: 16px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(56px, 15vw, 104px);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.88;
+}
+
+.partner-contribution {
+  background: #e6eff3;
+}
+
+.partner-outcome {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(103, 217, 243, 0.09), transparent 26%),
+    #071015;
+}
+
+@media (min-width: 720px) {
+  .partner-companies {
+    padding: 122px 4vw 130px;
+  }
+
+  .partner-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .partner-card {
+    min-height: 500px;
+    padding: 28px;
+  }
+
+  .partner-card h3 {
+    font-size: clamp(52px, 5vw, 76px);
+  }
+
+  .partner-detail-hero {
+    min-height: calc(88svh - 78px);
+    padding: 48px 4vw 72px;
+  }
+
+  .partner-detail-heading {
+    grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.45fr);
+    align-items: end;
+    gap: 7vw;
+    margin-top: 90px;
+  }
+
+  .partner-detail-heading h1 {
+    font-size: clamp(88px, 10vw, 148px);
+  }
+}

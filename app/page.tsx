@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ventures } from '../lib/ventures'
+import { partnerCompanies } from '../lib/partners'
 
 const principles = [
   {
@@ -65,8 +66,8 @@ export default function Home() {
             <span>from the system up.</span>
           </h1>
           <p className="portfolio-hero-description">
-            BuildWithKoo is the public home for the ventures I&apos;m building—the problem,
-            the system, the product, and the path from idea to operating company.
+            BuildWithKoo is the public home for companies I build and companies I help build—the
+            problem, the system, the product, and the path from idea to operating company.
           </p>
           <div className="portfolio-hero-actions">
             <a className="button button-primary" href="#portfolio">
@@ -138,9 +139,47 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="partner-companies" id="partners" aria-labelledby="partners-title">
+        <div className="portfolio-section-intro partner-companies-intro">
+          <p className="section-index">02 / Companies I build with</p>
+          <div>
+            <h2 id="partners-title">Partner companies. Built together.</h2>
+            <p>
+              These are not BuildWithKoo-owned ventures. They are companies where I am contributing
+              to the build—strategy, systems, technology, operating structure, or a combination of them.
+            </p>
+          </div>
+        </div>
+
+        <div className="partner-card-grid">
+          {partnerCompanies.map((company) => (
+            <article className="partner-card" key={company.slug}>
+              <header>
+                <span>{company.number}</span>
+                <span>Partner company</span>
+              </header>
+              <div className="partner-card-body">
+                <p>{company.category}</p>
+                <h3>{company.name}</h3>
+                <p>{company.summary}</p>
+              </div>
+              <footer>
+                <div>
+                  <span>Relationship</span>
+                  <strong>{company.relationship}</strong>
+                </div>
+                <Link href={`/partners/${company.slug}`}>
+                  Partner profile <span aria-hidden="true">→</span>
+                </Link>
+              </footer>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="portfolio-thesis" id="approach" aria-labelledby="portfolio-thesis-title">
         <div className="portfolio-thesis-lead">
-          <p className="section-index">02 / The portfolio thesis</p>
+          <p className="section-index">03 / The portfolio thesis</p>
           <h2 id="portfolio-thesis-title">
             The industries change.{' '}
             <span>The build discipline does not.</span>
@@ -167,7 +206,7 @@ export default function Home() {
       <section className="build-system" id="build-system" aria-labelledby="build-system-title">
         <div className="build-system-grid" aria-hidden="true" />
         <div className="build-system-intro">
-          <p className="section-index">03 / Build method</p>
+          <p className="section-index">04 / Build method</p>
           <div>
             <h2 id="build-system-title">
               From opportunity{' '}
@@ -193,7 +232,7 @@ export default function Home() {
 
       <section className="build-board build-board-refined" id="now" aria-labelledby="build-board-title">
         <div className="build-board-intro">
-          <p className="section-index">04 / Now building</p>
+          <p className="section-index">05 / Now building</p>
           <div>
             <h2 id="build-board-title">What is moving right now.</h2>
             <p>
@@ -225,7 +264,7 @@ export default function Home() {
 
       <section className="build-with-koo" id="build-with-koo" aria-labelledby="build-with-koo-title">
         <div>
-          <p className="section-index">05 / Build with Koo</p>
+          <p className="section-index">06 / Build with Koo</p>
           <h2 id="build-with-koo-title">
             The portfolio comes first.{' '}
             <span>Partnership is a separate path.</span>
