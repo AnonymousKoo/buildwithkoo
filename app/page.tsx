@@ -59,7 +59,7 @@ export default function Home() {
         <div className="portfolio-hero-copy">
           <p className="portfolio-kicker">
             <span />
-            BuildWithKoo // venture portfolio
+            BuildWithKoo // venture system
           </p>
           <h1 id="portfolio-hero-title">
             I build companies{' '}
@@ -67,7 +67,7 @@ export default function Home() {
           </h1>
           <p className="portfolio-hero-description">
             BuildWithKoo is the public home for companies I build and companies I help build—the
-            problem, the system, the product, and the path from idea to operating company.
+            thesis, operating logic, product, and path from idea to an operating company.
           </p>
           <div className="portfolio-hero-actions">
             <a className="button button-primary" href="#portfolio">
@@ -77,21 +77,64 @@ export default function Home() {
               How I build <Arrow />
             </a>
           </div>
+          <div className="hero-signal-row" aria-label="BuildWithKoo portfolio summary">
+            <span><b>{String(ventures.length).padStart(2, '0')}</b> ventures</span>
+            <span><b>{String(partnerCompanies.length).padStart(2, '0')}</b> partner builds</span>
+            <span><i aria-hidden="true" /> public system online</span>
+          </div>
         </div>
 
-        <div className="portfolio-hero-ledger" aria-label="Current BuildWithKoo portfolio">
-          <div className="portfolio-ledger-head">
-            <span>Current portfolio</span>
-            <span>{String(ventures.length).padStart(2, '0')} ventures</span>
+        <div className="portfolio-command" aria-label="BuildWithKoo portfolio topology">
+          <div className="command-head">
+            <span>Portfolio topology</span>
+            <span className="command-live"><i aria-hidden="true" /> Live view</span>
           </div>
-          {ventures.map((venture) => (
-            <Link href={`/ventures/${venture.slug}`} key={venture.slug}>
-              <span>{venture.number}</span>
-              <strong>{venture.name}</strong>
-              <small>{venture.status}</small>
-              <span aria-hidden="true">→</span>
-            </Link>
-          ))}
+
+          <div className="command-core">
+            <span>ROOT / 00</span>
+            <strong>BUILDWITHKOO</strong>
+            <small>VENTURE SYSTEM</small>
+          </div>
+
+          <div className="command-lanes">
+            <div className="command-lane">
+              <div className="command-lane-label">
+                <span>Owned ventures</span>
+                <small>{String(ventures.length).padStart(2, '0')} nodes</small>
+              </div>
+              <div className="command-node-list">
+                {ventures.map((venture) => (
+                  <Link className="command-node" href={`/ventures/${venture.slug}`} key={venture.slug}>
+                    <span>{venture.number}</span>
+                    <div>
+                      <strong>{venture.name}</strong>
+                      <small>{venture.stage}</small>
+                    </div>
+                    <i className={`command-status command-status-${venture.status.toLowerCase()}`} aria-hidden="true" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="command-lane command-lane-partners">
+              <div className="command-lane-label">
+                <span>Partner builds</span>
+                <small>{String(partnerCompanies.length).padStart(2, '0')} nodes</small>
+              </div>
+              <div className="command-node-list">
+                {partnerCompanies.map((company) => (
+                  <Link className="command-node" href={`/partners/${company.slug}`} key={company.slug}>
+                    <span>{company.number}</span>
+                    <div>
+                      <strong>{company.name}</strong>
+                      <small>{company.relationship}</small>
+                    </div>
+                    <i className="command-status command-status-building" aria-hidden="true" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -113,19 +156,38 @@ export default function Home() {
               <header>
                 <span>{venture.number}</span>
                 <span className={`venture-status venture-status-${venture.status.toLowerCase()}`}>
+                  <i aria-hidden="true" />
                   {venture.status}
                 </span>
               </header>
-              <div>
+
+              <div className="venture-card-main">
                 <p>{venture.category}</p>
                 <h3>{venture.name}</h3>
+                <p className="venture-card-headline">{venture.headline}</p>
                 <p className="venture-card-outcome-copy">{venture.outcome}</p>
               </div>
+
+              <div className="venture-mini-system" aria-label={venture.systemTitle}>
+                <div className="venture-mini-system-head">
+                  <span>System model</span>
+                  <span>{String(venture.system.length).padStart(2, '0')} stages</span>
+                </div>
+                <ol>
+                  {venture.system.slice(0, 5).map((step, index) => (
+                    <li key={step.title}>
+                      <span>{String(index + 1).padStart(2, '0')}</span>
+                      <strong>{step.title}</strong>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
               <footer className="venture-card-footer">
                 <span>{venture.stage}</span>
                 <div className="venture-card-links">
                   <Link href={`/ventures/${venture.slug}`}>
-                    Venture profile <span aria-hidden="true">→</span>
+                    Venture brief <span aria-hidden="true">→</span>
                   </Link>
                   {venture.website ? (
                     <a href={venture.website} target="_blank" rel="noreferrer">
@@ -153,16 +215,32 @@ export default function Home() {
 
         <div className="partner-card-grid">
           {partnerCompanies.map((company) => (
-            <article className="partner-card" key={company.slug}>
+            <article className="partner-card partner-card-command" key={company.slug}>
               <header>
                 <span>{company.number}</span>
-                <span>Partner company</span>
+                <span><i aria-hidden="true" /> Partner build</span>
               </header>
+
               <div className="partner-card-body">
                 <p>{company.category}</p>
                 <h3>{company.name}</h3>
+                {company.tagline ? <p className="partner-card-tagline">{company.tagline}</p> : null}
                 <p>{company.summary}</p>
               </div>
+
+              <div className="partner-build-strip">
+                <div>
+                  <span>Operator</span>
+                  <strong>{company.operator ?? 'Partner-led company'}</strong>
+                  {company.operatorRole ? <small>{company.operatorRole}</small> : null}
+                </div>
+                <div>
+                  <span>Build lane</span>
+                  <strong>{company.contribution[0]}</strong>
+                  <small>{company.contribution[1]}</small>
+                </div>
+              </div>
+
               <footer>
                 <div>
                   <span>Relationship</span>
@@ -170,7 +248,7 @@ export default function Home() {
                 </div>
                 <div className="partner-card-links">
                   <Link href={`/partners/${company.slug}`}>
-                    Partner profile <span aria-hidden="true">→</span>
+                    Partner brief <span aria-hidden="true">→</span>
                   </Link>
                   {company.website ? (
                     <a href={company.website} target="_blank" rel="noreferrer">

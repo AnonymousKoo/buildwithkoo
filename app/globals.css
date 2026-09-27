@@ -3760,3 +3760,881 @@ summary {
     letter-spacing: -0.055em;
   }
 }
+/* Venture HQ design pass */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(18px);
+  background: rgba(18, 16, 15, 0.9);
+}
+
+.wordmark {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.desktop-nav > a:not(.header-cta) {
+  position: relative;
+  color: #cbbcad;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.desktop-nav > a:not(.header-cta)::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 1px;
+  background: var(--gold-light);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.desktop-nav > a:not(.header-cta):hover::after,
+.desktop-nav > a:not(.header-cta):focus-visible::after {
+  transform: scaleX(1);
+}
+
+.portfolio-hero {
+  min-height: calc(100svh - 70px);
+  gap: 46px;
+  padding-top: 46px;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(255, 107, 53, 0.13), transparent 25%),
+    linear-gradient(180deg, rgba(255, 200, 87, 0.025), transparent 30%),
+    var(--charcoal);
+}
+
+.portfolio-hero-grid,
+.build-system-grid,
+.venture-detail-grid {
+  opacity: 0.38;
+  background-size: 64px 64px;
+}
+
+.portfolio-hero-copy,
+.portfolio-command {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-hero h1 {
+  max-width: 900px;
+  margin-top: 34px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(58px, 15vw, 82px);
+  font-weight: 650;
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+}
+
+.portfolio-hero h1 span {
+  margin-top: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+}
+
+.portfolio-hero-description {
+  max-width: 680px;
+  color: #c2b2a4;
+  font-size: 15px;
+}
+
+.hero-signal-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 28px;
+  color: #8f7e70;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-signal-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero-signal-row b {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+.hero-signal-row i,
+.command-live i,
+.venture-status i,
+.partner-card-command header span:last-child i {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--gold-light);
+  box-shadow: 0 0 14px rgba(255, 200, 87, 0.7);
+}
+
+.portfolio-command {
+  align-self: end;
+  overflow: hidden;
+  border: 1px solid rgba(255, 200, 87, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 200, 87, 0.035), transparent 35%),
+    rgba(16, 14, 13, 0.92);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-command::after {
+  position: absolute;
+  z-index: 0;
+  top: -20%;
+  right: 0;
+  left: 0;
+  height: 72px;
+  background: linear-gradient(180deg, transparent, rgba(255, 200, 87, 0.035), transparent);
+  content: "";
+  animation: portfolio-scan 8s linear infinite;
+  pointer-events: none;
+}
+
+.command-head,
+.command-lane-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 42px;
+  padding: 0 14px;
+  color: #8f7e70;
+  border-bottom: 1px solid rgba(255, 200, 87, 0.16);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.command-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gold-light);
+}
+
+.command-core {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-height: 148px;
+  place-content: center;
+  padding: 24px;
+  border-bottom: 1px solid rgba(255, 200, 87, 0.16);
+  text-align: center;
+}
+
+.command-core::before,
+.command-core::after {
+  position: absolute;
+  top: 50%;
+  width: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 200, 87, 0.35));
+  content: "";
+}
+
+.command-core::before {
+  left: 0;
+}
+
+.command-core::after {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.command-core span,
+.command-core small {
+  color: #8f7e70;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 8px;
+  letter-spacing: 0.11em;
+}
+
+.command-core strong {
+  margin: 8px 0 6px;
+  color: var(--off-white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.command-core small {
+  color: var(--gold-light);
+}
+
+.command-lanes {
+  position: relative;
+  z-index: 1;
+  display: grid;
+}
+
+.command-lane + .command-lane {
+  border-top: 1px solid rgba(255, 200, 87, 0.16);
+}
+
+.command-lane-label small {
+  color: #6f6258;
+}
+
+.command-node-list {
+  display: grid;
+}
+
+.command-node {
+  display: grid;
+  min-height: 64px;
+  grid-template-columns: 34px minmax(0, 1fr) 10px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border-bottom: 1px solid rgba(255, 200, 87, 0.11);
+  transition: background 160ms ease, padding 160ms ease;
+}
+
+.command-node:last-child {
+  border-bottom: 0;
+}
+
+.command-node:hover,
+.command-node:focus-visible {
+  padding-right: 18px;
+  padding-left: 18px;
+  background: rgba(255, 200, 87, 0.035);
+}
+
+.command-node > span {
+  color: #6f6258;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 8px;
+}
+
+.command-node > div {
+  display: grid;
+  gap: 4px;
+}
+
+.command-node strong {
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.command-node small {
+  overflow: hidden;
+  color: #8f7e70;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 7px;
+  letter-spacing: 0.07em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.command-status {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.command-status-active {
+  background: #72e7aa;
+  box-shadow: 0 0 12px rgba(114, 231, 170, 0.55);
+}
+
+.command-status-building {
+  background: var(--gold-light);
+  box-shadow: 0 0 12px rgba(255, 200, 87, 0.5);
+}
+
+.venture-portfolio {
+  padding-top: 104px;
+  background:
+    radial-gradient(circle at 84% 6%, rgba(255, 107, 53, 0.08), transparent 22%),
+    #0f0d0c;
+}
+
+.portfolio-section-intro h2,
+.build-board-intro h2,
+.build-system-intro h2,
+.build-with-koo h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 620;
+  letter-spacing: -0.065em;
+  line-height: 0.94;
+}
+
+.venture-card-grid {
+  gap: 12px;
+}
+
+.venture-card {
+  min-height: 650px;
+  gap: 26px;
+  padding: 20px;
+  border-color: rgba(255, 200, 87, 0.17);
+  background:
+    linear-gradient(160deg, rgba(255, 200, 87, 0.04), transparent 32%),
+    #151210;
+  box-shadow: none;
+}
+
+.venture-card::before {
+  left: 20px;
+  width: 54px;
+  background: var(--gold-light);
+}
+
+.venture-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 200, 87, 0.34);
+  background:
+    linear-gradient(160deg, rgba(255, 200, 87, 0.065), transparent 32%),
+    #191512;
+}
+
+.venture-card header {
+  min-height: 30px;
+}
+
+.venture-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.venture-status i {
+  width: 5px;
+  height: 5px;
+}
+
+.venture-status-active i {
+  background: #72e7aa;
+  box-shadow: 0 0 12px rgba(114, 231, 170, 0.55);
+}
+
+.venture-status-building i {
+  background: var(--gold-light);
+}
+
+.venture-card-main > p:first-child {
+  margin: 0 0 12px;
+  color: #8f7e70;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 8px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.venture-card h3 {
+  color: var(--off-white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(42px, 10vw, 58px);
+  font-weight: 680;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+
+.venture-card-headline {
+  max-width: 28ch;
+  margin: 18px 0 0;
+  color: var(--gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-style: italic;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.venture-card-outcome-copy {
+  margin-top: 17px !important;
+  color: #aa9a8c !important;
+  font-size: 12px !important;
+  line-height: 1.58 !important;
+}
+
+.venture-mini-system {
+  align-self: end;
+  border-top: 1px solid rgba(255, 200, 87, 0.15);
+  border-bottom: 1px solid rgba(255, 200, 87, 0.15);
+}
+
+.venture-mini-system-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+  color: #74665b;
+  border-bottom: 1px solid rgba(255, 200, 87, 0.11);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 7px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.venture-mini-system ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.venture-mini-system li {
+  display: grid;
+  min-height: 38px;
+  grid-template-columns: 26px minmax(0, 1fr);
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 200, 87, 0.08);
+}
+
+.venture-mini-system li:last-child {
+  border-bottom: 0;
+}
+
+.venture-mini-system li span {
+  color: #65594f;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 7px;
+}
+
+.venture-mini-system li strong {
+  color: #c7b8aa;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.venture-card-footer {
+  align-items: center;
+}
+
+.venture-card-links {
+  align-items: center;
+}
+
+.partner-companies {
+  background:
+    linear-gradient(180deg, rgba(255, 107, 53, 0.04), transparent 30%),
+    #16110f;
+}
+
+.partner-card-grid {
+  gap: 12px;
+}
+
+.partner-card {
+  min-height: 560px;
+  border-color: rgba(255, 200, 87, 0.18);
+  background:
+    linear-gradient(145deg, rgba(255, 107, 53, 0.05), transparent 36%),
+    #171310;
+}
+
+.partner-card::after {
+  border-color: rgba(255, 200, 87, 0.11);
+  box-shadow:
+    0 0 0 28px rgba(255, 200, 87, 0.018),
+    0 0 0 56px rgba(255, 107, 53, 0.012);
+}
+
+.partner-card-command header span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.partner-card h3 {
+  max-width: 760px;
+  color: var(--off-white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(38px, 8vw, 62px);
+  font-weight: 660;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.partner-card-tagline {
+  margin: 18px 0 0 !important;
+  color: var(--gold-light) !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 23px !important;
+  font-style: italic;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  text-transform: none !important;
+}
+
+.partner-build-strip {
+  display: grid;
+  gap: 1px;
+  border: 1px solid rgba(255, 200, 87, 0.12);
+  background: rgba(255, 200, 87, 0.12);
+}
+
+.partner-build-strip > div {
+  display: grid;
+  gap: 5px;
+  padding: 14px;
+  background: #120f0d;
+}
+
+.partner-build-strip span,
+.partner-build-strip small {
+  color: #7f6f62;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.partner-build-strip strong {
+  color: #d0c0b1;
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.portfolio-thesis {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 107, 53, 0.11), transparent 30%),
+    #251910;
+}
+
+.portfolio-thesis-lead h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 620;
+  letter-spacing: -0.065em;
+}
+
+.portfolio-thesis-lead h2 span {
+  color: var(--gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.portfolio-principles h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 27px;
+  font-weight: 620;
+  letter-spacing: -0.04em;
+}
+
+.build-system {
+  background:
+    linear-gradient(180deg, rgba(255, 200, 87, 0.025), transparent 30%),
+    #0f0d0c;
+}
+
+.build-system-stages {
+  gap: 1px;
+  border: 1px solid rgba(255, 200, 87, 0.14);
+  background: rgba(255, 200, 87, 0.14);
+}
+
+.build-system-stages li {
+  min-height: 220px;
+  padding: 20px;
+  border: 0;
+  background:
+    linear-gradient(145deg, rgba(255, 200, 87, 0.03), transparent 40%),
+    #14110f;
+  transition: background 160ms ease;
+}
+
+.build-system-stages li:hover {
+  background:
+    linear-gradient(145deg, rgba(255, 200, 87, 0.065), transparent 42%),
+    #181411;
+}
+
+.build-system-stages h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 620;
+  letter-spacing: -0.045em;
+}
+
+.build-board-refined {
+  background: #f4e8d7;
+}
+
+.build-board-refined .build-board-name h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 650;
+  letter-spacing: -0.05em;
+}
+
+.build-board-list article {
+  transition: padding 160ms ease, background 160ms ease;
+}
+
+.build-board-list article:hover {
+  padding-right: 12px;
+  padding-left: 12px;
+  background: rgba(33, 26, 22, 0.025);
+}
+
+.build-with-koo {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 22%, rgba(255, 107, 53, 0.12), transparent 27%),
+    #15110f;
+}
+
+.build-with-koo::before {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(255, 200, 87, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 200, 87, 0.11) 1px, transparent 1px);
+  background-size: 64px 64px;
+  content: "";
+  pointer-events: none;
+}
+
+.build-with-koo > * {
+  position: relative;
+  z-index: 1;
+}
+
+.venture-profile-heading h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 680;
+  letter-spacing: -0.075em;
+  line-height: 0.82;
+}
+
+.venture-profile-headline {
+  max-width: 980px;
+}
+
+.venture-brief-grid {
+  background: rgba(255, 200, 87, 0.01);
+}
+
+.venture-thesis-grid h2,
+.venture-system-heading h2,
+.venture-outcomes-content > div:first-child h2,
+.venture-current-intro h2,
+.venture-profile-close h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 620;
+  letter-spacing: -0.06em;
+}
+
+.venture-system-grid {
+  position: relative;
+}
+
+.venture-system-grid li {
+  position: relative;
+  overflow: hidden;
+}
+
+.venture-system-grid li::after {
+  position: absolute;
+  right: -24px;
+  bottom: -24px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid rgba(255, 200, 87, 0.08);
+  border-radius: 50%;
+  content: "";
+}
+
+.venture-system-grid h3,
+.venture-outcomes-grid h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 620;
+  letter-spacing: -0.04em;
+}
+
+.venture-profile-close {
+  display: grid;
+  min-height: 62svh;
+  align-content: center;
+}
+
+.button,
+.header-cta {
+  transition:
+    transform 160ms ease,
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.button:hover,
+.header-cta:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes portfolio-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateY(700%); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-command::after {
+    animation: none;
+  }
+
+  .venture-card,
+  .button,
+  .header-cta,
+  .command-node,
+  .build-board-list article {
+    transition: none;
+  }
+}
+
+@media (min-width: 720px) {
+  .portfolio-hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(390px, 0.65fr);
+    align-items: center;
+    gap: 6vw;
+    padding: 64px 4vw 70px;
+  }
+
+  .portfolio-hero-copy {
+    align-self: center;
+  }
+
+  .portfolio-hero h1 {
+    font-size: clamp(78px, 8.5vw, 126px);
+  }
+
+  .portfolio-command {
+    align-self: center;
+  }
+
+  .command-lanes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .command-lane + .command-lane {
+    border-top: 0;
+    border-left: 1px solid rgba(255, 200, 87, 0.16);
+  }
+
+  .venture-portfolio,
+  .partner-companies {
+    padding-top: 126px;
+  }
+
+  .venture-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .venture-card {
+    min-height: 720px;
+    padding: 24px;
+  }
+
+  .venture-card h3 {
+    font-size: clamp(42px, 4.4vw, 62px);
+  }
+
+  .venture-card-headline {
+    font-size: 24px;
+  }
+
+  .partner-build-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .build-system-stages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .build-system-stages li {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 719px) {
+  .portfolio-hero {
+    padding-top: 36px;
+  }
+
+  .portfolio-hero h1 {
+    font-size: clamp(54px, 16vw, 70px);
+  }
+
+  .portfolio-command {
+    margin-top: 6px;
+  }
+
+  .command-lanes {
+    grid-template-columns: 1fr;
+  }
+
+  .venture-card {
+    min-height: 620px;
+  }
+
+  .venture-card h3 {
+    font-size: clamp(42px, 13vw, 54px);
+  }
+
+  .partner-card {
+    min-height: 520px;
+  }
+
+  .partner-card h3 {
+    font-size: clamp(38px, 11vw, 50px);
+  }
+
+  .venture-profile-heading h1 {
+    font-size: clamp(48px, 14vw, 64px);
+  }
+}
+
+/* Final responsive tightening for the HQ pass */
+.partner-detail-heading h1,
+.partner-services-content h2,
+.partner-services-grid h3,
+.partner-contribution h2,
+.partner-outcome h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 620;
+  letter-spacing: -0.055em;
+}
+
+@media (max-width: 719px) {
+  .portfolio-hero {
+    min-height: auto;
+    align-content: start;
+    gap: 58px;
+    padding-bottom: 72px;
+  }
+
+  .portfolio-command {
+    margin-top: 0;
+  }
+}

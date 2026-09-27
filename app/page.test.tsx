@@ -39,7 +39,7 @@ describe('BuildWithKoo portfolio homepage', () => {
     }
 
     expect(within(portfolio!).queryByText(/Hummingbird/i)).not.toBeInTheDocument()
-    expect(within(portfolio!).getAllByRole('link', { name: /Venture profile/i })).toHaveLength(3)
+    expect(within(portfolio!).getAllByRole('link', { name: /Venture brief/i })).toHaveLength(3)
     const ventureLiveSites = within(portfolio!).getAllByRole('link', { name: /Live site/i })
     expect(ventureLiveSites).toHaveLength(3)
     expect(ventureLiveSites.map((link) => link.getAttribute('href'))).toEqual(
@@ -62,7 +62,7 @@ describe('BuildWithKoo portfolio homepage', () => {
     expect(partners).not.toBeNull()
     expect(within(partners!).getByRole('heading', { name: 'LEGACY BUSINESS CONSULTANTS' })).toBeInTheDocument()
     expect(within(partners!).getByRole('heading', { name: 'YAADBODY' })).toBeInTheDocument()
-    expect(within(partners!).getAllByRole('link', { name: /Partner profile/i })).toHaveLength(2)
+    expect(within(partners!).getAllByRole('link', { name: /Partner brief/i })).toHaveLength(2)
     const liveSites = within(partners!).getAllByRole('link', { name: /Live site/i })
     expect(liveSites).toHaveLength(2)
     expect(liveSites.map((link) => link.getAttribute('href'))).toEqual(
