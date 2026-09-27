@@ -162,7 +162,7 @@ export default function Home() {
               </header>
 
               <div className="venture-card-main">
-                <p>{venture.category}</p>
+                <p>{venture.vertical}{' // '}{venture.category}</p>
                 <h3>{venture.name}</h3>
                 <p className="venture-card-headline">{venture.headline}</p>
                 <p className="venture-card-outcome-copy">{venture.outcome}</p>
@@ -332,7 +332,7 @@ export default function Home() {
             <article key={venture.slug}>
               <div className="build-board-number">{venture.number}</div>
               <div className="build-board-name">
-                <span>{venture.category}</span>
+                <span>{venture.vertical}{' // '}{venture.category}</span>
                 <h3>{venture.name}</h3>
               </div>
               <p>{venture.now}</p>

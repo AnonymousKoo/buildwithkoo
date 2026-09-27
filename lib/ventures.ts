@@ -9,9 +9,10 @@ export type VentureOutcome = {
 }
 
 export type Venture = {
-  slug: 'sekinfra' | 'vyral' | 'tablegrid'
+  slug: 'sekinfra' | 'vyral' | 'tablegrid' | 'hummingbird-storyhouse'
   number: string
   name: string
+  vertical: string
   category: string
   status: 'Active' | 'Building'
   stage: string
@@ -37,6 +38,7 @@ export const ventures: Venture[] = [
     slug: 'sekinfra',
     number: '01',
     name: 'SEKINFRA',
+    vertical: 'Business infrastructure',
     category: 'Business + technology infrastructure',
     status: 'Active',
     stage: 'Operating',
@@ -119,6 +121,7 @@ export const ventures: Venture[] = [
     slug: 'vyral',
     number: '02',
     name: 'VYRAL',
+    vertical: 'Gaming & interactive',
     category: 'Connected gaming network',
     status: 'Building',
     stage: 'Founding era / network build',
@@ -197,6 +200,7 @@ export const ventures: Venture[] = [
     slug: 'tablegrid',
     number: '03',
     name: 'TABLEGRID',
+    vertical: 'Food & hospitality technology',
     category: 'Food operations platform',
     status: 'Building',
     stage: 'Domain / application layer',
@@ -263,6 +267,89 @@ export const ventures: Venture[] = [
     now:
       'Building the domain model, application logic, operating blueprint, and user journey that connect food-business decisions before deeper automation is added.',
     website: 'https://tablegrid.vercel.app',
+  },
+  {
+    slug: 'hummingbird-storyhouse',
+    number: '04',
+    name: 'HUMMINGBIRD STORYHOUSE',
+    vertical: 'Media & culture',
+    category: 'Multimedia + media systems',
+    status: 'Building',
+    stage: 'Media system / originals build',
+    headline: 'Stories don’t sit still. Neither do we.',
+    summary:
+      'Hummingbird Storyhouse is a Black-owned multimedia company building stories, media systems, and original worlds designed to move through culture rather than disappear into a feed.',
+    audience:
+      'Brands, creators, communities, and audiences that need culturally fluent storytelling with strategy, production, distribution, and learning connected from the start.',
+    model:
+      'A media operating company that connects strategy, creative development, production, creator partnerships, distribution, audience intelligence, and owned IP into one compounding loop.',
+    problem:
+      'Creative work is often treated as a stream of disconnected deliverables. Strategy lives in one place, production in another, distribution happens late, and audience learning rarely compounds into the next release.',
+    thesis:
+      'A strong story should become more than one asset. When strategy, production, release, audience signals, and learning operate as one system, every release can strengthen the next one while creating room for owned worlds and intellectual property.',
+    systemTitle: 'Make the feeling travel farther than the format.',
+    system: [
+      {
+        title: 'Discover',
+        description: 'Find the real objective, cultural opening, audience truth, and the feeling or action the story should create.',
+      },
+      {
+        title: 'Build',
+        description: 'Turn the strategy into the story, formats, creative direction, makers, and measurement plan.',
+      },
+      {
+        title: 'Produce',
+        description: 'Create the films, audio, editorial, visual language, and multimedia assets the idea actually needs.',
+      },
+      {
+        title: 'Release',
+        description: 'Sequence the work for the channels, moments, communities, and formats where the story can travel.',
+      },
+      {
+        title: 'Learn',
+        description: 'Read attention and behavior as evidence instead of chasing surface-level algorithm signals.',
+      },
+      {
+        title: 'Compound',
+        description: 'Feed the learning forward so the next release starts smarter and the media system grows more valuable over time.',
+      },
+    ],
+    outcomesTitle: 'Creative work that compounds instead of disappearing.',
+    outcomes: [
+      {
+        title: 'Stronger point of view',
+        description: 'Anchor the work in cultural truth and a clear creative position rather than generic content volume.',
+      },
+      {
+        title: 'Connected distribution',
+        description: 'Design the release alongside the story so the work arrives in the right shape, sequence, and place.',
+      },
+      {
+        title: 'Audience intelligence',
+        description: 'Turn what people watch, hold, share, and act on into useful signals for the next creative decision.',
+      },
+      {
+        title: 'Reusable media systems',
+        description: 'Build repeatable ways to move from strategy through production, release, and learning without rebuilding the process every time.',
+      },
+      {
+        title: 'Owned worlds & IP',
+        description: 'Develop original concepts with enough depth to grow across film, series, audio, editorial, and emerging formats.',
+      },
+    ],
+    stageNote:
+      'The public Storyhouse experience is live and presents strategy, creative development, multimedia production, creator partnerships, distribution, audience intelligence, and originals as one system. Selected concepts and original IP are still being developed inside that ecosystem.',
+    focus: [
+      'Brand and content strategy tied to cultural truth and audience behavior',
+      'Video and multimedia production designed as part of a larger release system',
+      'Creator partnerships, distribution, and audience intelligence',
+      'Original worlds and intellectual property that can expand across formats',
+    ],
+    outcome:
+      'A media company where every release can build creative equity, audience understanding, and owned IP instead of ending as a one-off asset.',
+    now:
+      'Building Hummingbird Storyhouse as both a client-facing media operating company and an engine for original stories, worlds, and intellectual property.',
+    website: 'https://hummingbird-storyhouse.vercel.app',
   },
 ]
 

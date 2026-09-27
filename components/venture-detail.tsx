@@ -20,7 +20,7 @@ export function VentureDetail({ venture }: { venture: Venture }) {
         </div>
 
         <div className="venture-profile-heading">
-          <p className="portfolio-kicker">Venture brief // {venture.category}</p>
+          <p className="portfolio-kicker">{venture.vertical}{' // '}{venture.category}</p>
           <h1>{venture.name}</h1>
           <p className="venture-profile-headline">{venture.headline}</p>
           <p className="venture-detail-summary">{venture.summary}</p>

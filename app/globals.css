@@ -4638,3 +4638,47 @@ summary {
     margin-top: 0;
   }
 }
+
+/* Four-venture grid + light-section contrast */
+.build-board-refined {
+  color: #211a16;
+  background: #f4e8d7;
+}
+
+.build-board-refined .build-board-intro h2,
+.build-board-refined .build-board-name h3,
+.build-board-refined .build-board-action a {
+  color: #211a16;
+}
+
+.build-board-refined .section-index,
+.build-board-refined .build-board-number,
+.build-board-refined .build-board-name span {
+  color: #6f6258;
+}
+
+.build-board-refined .build-board-intro > div > p,
+.build-board-refined .build-board-list article > p {
+  color: #584d44;
+}
+
+.build-board-refined .build-board-list,
+.build-board-refined .build-board-list article {
+  border-color: rgba(33, 26, 22, 0.2);
+}
+
+.build-board-refined .build-board-action strong {
+  color: #76541d;
+  border-color: rgba(118, 84, 29, 0.42);
+  background: rgba(255, 200, 87, 0.09);
+}
+
+@media (min-width: 720px) {
+  .venture-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .venture-card {
+    min-height: 680px;
+  }
+}
