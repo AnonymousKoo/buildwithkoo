@@ -69,6 +69,8 @@ export const partnerCompanies: PartnerCompany[] = [
     status: 'Building',
     summary:
       'A healthy prepared-meal company built around modular proteins, carbs, vegetables, and flavors, with Jamaican and Caribbean-forward signatures alongside broader healthy meals.',
+    operator: 'Allison Mcnee',
+    operatorRole: 'Owner',
     contribution: [
       'Business application and customer journey',
       'Operating systems and technology support',
@@ -77,6 +79,7 @@ export const partnerCompanies: PartnerCompany[] = [
     ],
     outcome:
       'Turn one food operation into a repeatable business across recurring meal prep, catering, and party trays.',
+    website: 'https://yaadbody.vercel.app',
   },
 ]
 
