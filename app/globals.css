@@ -1,13 +1,13 @@
 :root {
-  --charcoal: #071015;
-  --charcoal-soft: #0b171d;
-  --ink: #0c171d;
-  --off-white: #eaf1f4;
-  --off-white-deep: #dce8ed;
-  --gold: #18a9ca;
-  --gold-light: #67d9f3;
-  --muted-on-light: #5f727b;
-  --line-dark: rgba(103, 217, 243, 0.18);
+  --charcoal: #12100F;
+  --charcoal-soft: #191513;
+  --ink: #211A16;
+  --off-white: #FFF6EA;
+  --off-white-deep: #F1E5D3;
+  --gold: #FF6B35;
+  --gold-light: #FFC857;
+  --muted-on-light: #74695E;
+  --line-dark: rgba(255, 200, 87, 0.18);
   --line-light: rgba(12, 23, 29, 0.18);
   color: var(--off-white);
   background: var(--charcoal);
@@ -2754,7 +2754,7 @@ summary {
 .venture-detail,
 .build-with-koo {
   background:
-    radial-gradient(circle at 78% 18%, rgba(24, 169, 202, 0.12), transparent 28%),
+    radial-gradient(circle at 78% 18%, rgba(255, 107, 53, 0.12), transparent 28%),
     var(--charcoal);
 }
 
@@ -2763,8 +2763,8 @@ summary {
 .venture-detail-grid {
   opacity: 0.55;
   background-image:
-    linear-gradient(rgba(103, 217, 243, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(103, 217, 243, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 200, 87, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 200, 87, 0.08) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -2786,18 +2786,18 @@ summary {
 }
 
 .portfolio-kicker {
-  color: #86aab4;
+  color: #B9A99B;
 }
 
 .portfolio-kicker > span {
-  box-shadow: 0 0 18px rgba(103, 217, 243, 0.75);
+  box-shadow: 0 0 18px rgba(255, 200, 87, 0.75);
 }
 
 .venture-portfolio {
   color: var(--off-white);
   background:
-    linear-gradient(180deg, rgba(103, 217, 243, 0.035), transparent 32%),
-    #0a151b;
+    linear-gradient(180deg, rgba(255, 200, 87, 0.035), transparent 32%),
+    #171310;
 }
 
 .venture-portfolio .section-index,
@@ -2805,17 +2805,17 @@ summary {
 .venture-portfolio .venture-card > div > p:first-child,
 .venture-portfolio .venture-card > div > p:last-child,
 .venture-portfolio .venture-card footer > span {
-  color: #8ea3ac;
+  color: #9A8879;
 }
 
 .venture-card {
   position: relative;
   overflow: hidden;
-  border-color: rgba(103, 217, 243, 0.18);
+  border-color: rgba(255, 200, 87, 0.18);
   background:
-    linear-gradient(180deg, rgba(103, 217, 243, 0.045), rgba(255, 255, 255, 0.012)),
-    #0b171d;
-  box-shadow: inset 0 1px 0 rgba(103, 217, 243, 0.04);
+    linear-gradient(180deg, rgba(255, 200, 87, 0.045), rgba(255, 255, 255, 0.012)),
+    #191513;
+  box-shadow: inset 0 1px 0 rgba(255, 200, 87, 0.04);
 }
 
 .venture-card::before {
@@ -2826,13 +2826,13 @@ summary {
   width: 72px;
   height: 1px;
   background: var(--gold-light);
-  box-shadow: 0 0 18px rgba(103, 217, 243, 0.7);
+  box-shadow: 0 0 18px rgba(255, 200, 87, 0.7);
 }
 
 .venture-card:hover {
   background:
-    linear-gradient(180deg, rgba(103, 217, 243, 0.075), rgba(255, 255, 255, 0.018)),
-    #0c1920;
+    linear-gradient(180deg, rgba(255, 200, 87, 0.075), rgba(255, 255, 255, 0.018)),
+    #201812;
 }
 
 .venture-card h3 {
@@ -2840,7 +2840,7 @@ summary {
 }
 
 .venture-card footer {
-  border-color: rgba(103, 217, 243, 0.16);
+  border-color: rgba(255, 200, 87, 0.16);
 }
 
 .venture-card-footer {
@@ -2866,20 +2866,20 @@ summary {
 
 .venture-status-building {
   color: var(--gold-light);
-  border-color: rgba(103, 217, 243, 0.38);
-  background: rgba(103, 217, 243, 0.035);
+  border-color: rgba(255, 200, 87, 0.38);
+  background: rgba(255, 200, 87, 0.035);
 }
 
 .portfolio-thesis {
   color: var(--off-white);
   background:
-    radial-gradient(circle at 20% 20%, rgba(24, 169, 202, 0.18), transparent 32%),
-    #0d2028;
+    radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.18), transparent 32%),
+    #2A1E15;
 }
 
 .portfolio-thesis .section-index {
-  border-color: rgba(103, 217, 243, 0.22);
-  color: #8ea3ac;
+  border-color: rgba(255, 200, 87, 0.22);
+  color: #9A8879;
 }
 
 .portfolio-thesis-lead > p:last-child,
@@ -2889,7 +2889,7 @@ summary {
 
 .portfolio-principles,
 .portfolio-principles article {
-  border-color: rgba(103, 217, 243, 0.2);
+  border-color: rgba(255, 200, 87, 0.2);
 }
 
 .portfolio-principles article > span {
@@ -2899,8 +2899,8 @@ summary {
 .build-board-refined {
   color: var(--off-white);
   background:
-    linear-gradient(180deg, rgba(103, 217, 243, 0.035), transparent 34%),
-    #081319;
+    linear-gradient(180deg, rgba(255, 200, 87, 0.035), transparent 34%),
+    #15110F;
 }
 
 .build-board-refined .section-index,
@@ -2908,13 +2908,13 @@ summary {
 .build-board-refined .build-board-number,
 .build-board-refined .build-board-name span,
 .build-board-refined .build-board-list article > p {
-  color: #8ea3ac;
+  color: #9A8879;
 }
 
 .build-board-refined .section-index,
 .build-board-refined .build-board-list,
 .build-board-refined .build-board-list article {
-  border-color: rgba(103, 217, 243, 0.16);
+  border-color: rgba(255, 200, 87, 0.16);
 }
 
 .build-board-refined .build-board-name h3 {
@@ -2923,8 +2923,8 @@ summary {
 
 .build-board-action strong {
   color: var(--gold-light);
-  border-color: rgba(103, 217, 243, 0.35);
-  background: rgba(103, 217, 243, 0.035);
+  border-color: rgba(255, 200, 87, 0.35);
+  background: rgba(255, 200, 87, 0.035);
 }
 
 .venture-detail-topline-actions {
@@ -2939,15 +2939,15 @@ summary {
 }
 
 .venture-site-pending {
-  color: #728790;
+  color: #877567;
 }
 
 .venture-stage-card {
-  background: rgba(103, 217, 243, 0.025);
+  background: rgba(255, 200, 87, 0.025);
 }
 
 .button-primary {
-  box-shadow: 0 0 0 1px rgba(103, 217, 243, 0.05), 0 0 30px rgba(24, 169, 202, 0.08);
+  box-shadow: 0 0 0 1px rgba(255, 200, 87, 0.05), 0 0 30px rgba(255, 107, 53, 0.08);
 }
 
 @media (max-width: 719px) {
@@ -2973,17 +2973,17 @@ summary {
   padding: 90px 20px 96px;
   color: var(--off-white);
   background:
-    radial-gradient(circle at 82% 12%, rgba(103, 217, 243, 0.11), transparent 28%),
-    #061117;
+    radial-gradient(circle at 82% 12%, rgba(255, 200, 87, 0.11), transparent 28%),
+    #130F0D;
 }
 
 .partner-companies-intro .section-index {
-  color: #8ea3ac;
-  border-color: rgba(103, 217, 243, 0.16);
+  color: #9A8879;
+  border-color: rgba(255, 200, 87, 0.16);
 }
 
 .partner-companies-intro > div > p {
-  color: #9bb0b9;
+  color: #B6A491;
 }
 
 .partner-card-grid {
@@ -2999,9 +2999,9 @@ summary {
   gap: 34px;
   padding: 22px;
   overflow: hidden;
-  border: 1px solid rgba(103, 217, 243, 0.2);
+  border: 1px solid rgba(255, 200, 87, 0.2);
   background:
-    linear-gradient(135deg, rgba(103, 217, 243, 0.07), transparent 34%),
+    linear-gradient(135deg, rgba(255, 200, 87, 0.07), transparent 34%),
     rgba(10, 25, 32, 0.96);
 }
 
@@ -3012,11 +3012,11 @@ summary {
   bottom: -52px;
   width: 160px;
   height: 160px;
-  border: 1px solid rgba(103, 217, 243, 0.13);
+  border: 1px solid rgba(255, 200, 87, 0.13);
   border-radius: 50%;
   box-shadow:
-    0 0 0 28px rgba(103, 217, 243, 0.025),
-    0 0 0 56px rgba(103, 217, 243, 0.015);
+    0 0 0 28px rgba(255, 200, 87, 0.025),
+    0 0 0 56px rgba(255, 200, 87, 0.015);
   pointer-events: none;
 }
 
@@ -3032,7 +3032,7 @@ summary {
 
 .partner-card header span,
 .partner-card footer span {
-  color: #79909a;
+  color: #927F6E;
   font-family: "Courier New", Courier, monospace;
   font-size: 8px;
   letter-spacing: 0.11em;
@@ -3050,7 +3050,7 @@ summary {
 
 .partner-card-body > p:first-child {
   margin: 0 0 14px;
-  color: #8ea3ac;
+  color: #9A8879;
   font-family: "Courier New", Courier, monospace;
   font-size: 9px;
   letter-spacing: 0.1em;
@@ -3070,14 +3070,14 @@ summary {
 .partner-card-body > p:last-child {
   max-width: 620px;
   margin: 22px 0 0;
-  color: #a4b6bd;
+  color: #BEAC98;
   font-size: 14px;
   line-height: 1.65;
 }
 
 .partner-card footer {
   padding-top: 20px;
-  border-top: 1px solid rgba(103, 217, 243, 0.17);
+  border-top: 1px solid rgba(255, 200, 87, 0.17);
 }
 
 .partner-card footer > div {
@@ -3106,7 +3106,7 @@ summary {
   padding: 38px 20px 58px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 80% 22%, rgba(103, 217, 243, 0.13), transparent 30%),
+    radial-gradient(circle at 80% 22%, rgba(255, 200, 87, 0.13), transparent 30%),
     var(--charcoal);
 }
 
@@ -3133,8 +3133,8 @@ summary {
 
 .partner-outcome {
   background:
-    radial-gradient(circle at 15% 20%, rgba(103, 217, 243, 0.09), transparent 26%),
-    #071015;
+    radial-gradient(circle at 15% 20%, rgba(255, 200, 87, 0.09), transparent 26%),
+    #12100F;
 }
 
 @media (min-width: 720px) {
@@ -3177,8 +3177,8 @@ summary {
   display: grid;
   gap: 1px;
   margin-top: 46px;
-  border: 1px solid rgba(103, 217, 243, 0.18);
-  background: rgba(103, 217, 243, 0.08);
+  border: 1px solid rgba(255, 200, 87, 0.18);
+  background: rgba(255, 200, 87, 0.08);
 }
 
 .partner-meta-strip > div {
@@ -3190,7 +3190,7 @@ summary {
 
 .partner-meta-strip span,
 .partner-meta-strip small {
-  color: #78909a;
+  color: #907E6D;
   font-family: "Courier New", Courier, monospace;
   font-size: 8px;
   letter-spacing: 0.1em;
@@ -3209,16 +3209,16 @@ summary {
   padding: 88px 20px 96px;
   color: var(--off-white);
   background:
-    linear-gradient(180deg, rgba(103, 217, 243, 0.05), transparent 38%),
-    #0a171d;
+    linear-gradient(180deg, rgba(255, 200, 87, 0.05), transparent 38%),
+    #1A1411;
 }
 
 .partner-services .venture-detail-section-label {
-  border-color: rgba(103, 217, 243, 0.18);
+  border-color: rgba(255, 200, 87, 0.18);
 }
 
 .partner-services .venture-detail-section-label p {
-  color: #8ea3ac;
+  color: #9A8879;
 }
 
 .partner-services-content h2 {
@@ -3235,14 +3235,14 @@ summary {
   display: grid;
   gap: 1px;
   margin-top: 42px;
-  border: 1px solid rgba(103, 217, 243, 0.16);
-  background: rgba(103, 217, 243, 0.16);
+  border: 1px solid rgba(255, 200, 87, 0.16);
+  background: rgba(255, 200, 87, 0.16);
 }
 
 .partner-services-grid article {
   min-height: 210px;
   padding: 22px;
-  background: #0a151b;
+  background: #171310;
 }
 
 .partner-services-grid article > span {
@@ -3262,7 +3262,7 @@ summary {
 
 .partner-services-grid p {
   margin: 0;
-  color: #9eb2ba;
+  color: #B7A793;
   font-size: 13px;
   line-height: 1.6;
 }
