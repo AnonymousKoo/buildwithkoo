@@ -26,11 +26,50 @@ export function PartnerDetail({ company }: { company: PartnerCompany }) {
         </div>
 
         <p className="venture-detail-summary">{company.summary}</p>
+
+        {(company.operator || company.tagline) ? (
+          <div className="partner-meta-strip">
+            {company.operator ? (
+              <div>
+                <span>Operator</span>
+                <strong>{company.operator}</strong>
+                {company.operatorRole ? <small>{company.operatorRole}</small> : null}
+              </div>
+            ) : null}
+            {company.tagline ? (
+              <div>
+                <span>Company line</span>
+                <strong>{company.tagline}</strong>
+              </div>
+            ) : null}
+          </div>
+        ) : null}
       </section>
+
+      {company.services ? (
+        <section className="partner-services" aria-labelledby="partner-services-title">
+          <div className="venture-detail-section-label">
+            <span>01</span>
+            <p>Company offering</p>
+          </div>
+          <div className="partner-services-content">
+            <h2 id="partner-services-title">What the company helps clients do.</h2>
+            <div className="partner-services-grid">
+              {company.services.map((service, index) => (
+                <article key={service.title}>
+                  <span>0{index + 1}</span>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="venture-focus partner-contribution" aria-labelledby="partner-contribution-title">
         <div className="venture-detail-section-label">
-          <span>01</span>
+          <span>{company.services ? '02' : '01'}</span>
           <p>Build contribution</p>
         </div>
         <div className="venture-focus-content">

@@ -6,6 +6,10 @@ export type PartnerCompany = {
   relationship: string
   status: 'Building'
   summary: string
+  tagline?: string
+  operator?: string
+  operatorRole?: string
+  services?: Array<{ title: string; description: string }>
   contribution: string[]
   outcome: string
   website?: string
@@ -15,12 +19,37 @@ export const partnerCompanies: PartnerCompany[] = [
   {
     slug: 'legacy-consulting',
     number: 'P01',
-    name: 'LEGACY CONSULTING',
+    name: 'LEGACY BUSINESS CONSULTANTS',
     category: 'Business consulting',
     relationship: 'Company build partner',
     status: 'Building',
     summary:
-      'A business consulting company I am helping shape into a clear, structured operating business.',
+      'A business consulting company helping owners start correctly, access capital, strengthen their financial position, and build systems that support long-term growth.',
+    tagline: 'Build. Grow. Legacy.',
+    operator: 'Dexter Lewis',
+    operatorRole: 'Owner & CEO',
+    services: [
+      {
+        title: 'Business formation',
+        description:
+          'Entity setup, operating agreements, compliance, licensing, and the foundational structure needed to start strong.',
+      },
+      {
+        title: 'Business funding & credit',
+        description:
+          'Business-credit development, funding readiness, access to capital options, and positioning for growth.',
+      },
+      {
+        title: 'Business tax strategy',
+        description:
+          'Tax planning, deductions and credits, compliance, and strategies intended to reduce unnecessary tax burden.',
+      },
+      {
+        title: 'Business systems',
+        description:
+          'Operational streamlining, repetitive-work automation, client follow-up, and systems designed for sustainable growth.',
+      },
+    ],
     contribution: [
       'Company structure and positioning',
       'Offer and client journey design',
@@ -28,7 +57,7 @@ export const partnerCompanies: PartnerCompany[] = [
       'Digital build support as the company develops',
     ],
     outcome:
-      'Build a consulting company with a clear offer, repeatable delivery, and the operating structure to grow.',
+      'Build a consulting company that can help owners move from formation and funding to stronger operations, smarter systems, and sustainable growth.',
   },
   {
     slug: 'yaadbody',

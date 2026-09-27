@@ -52,7 +52,7 @@ describe('BuildWithKoo portfolio homepage', () => {
       .closest('section')
 
     expect(partners).not.toBeNull()
-    expect(within(partners!).getByRole('heading', { name: 'LEGACY CONSULTING' })).toBeInTheDocument()
+    expect(within(partners!).getByRole('heading', { name: 'LEGACY BUSINESS CONSULTANTS' })).toBeInTheDocument()
     expect(within(partners!).getByRole('heading', { name: 'YAADBODY' })).toBeInTheDocument()
     expect(within(partners!).getAllByRole('link', { name: /Partner profile/i })).toHaveLength(2)
     expect(within(partners!).getByText(/not BuildWithKoo-owned ventures/i)).toBeInTheDocument()
