@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CinemaMotion } from "../components/cinema-motion";
 import { ventures } from "../lib/ventures";
 import { partnerCompanies } from "../lib/partners";
 
@@ -61,7 +60,6 @@ function Arrow() {
 export default function Home() {
   return (
     <main id="main-content">
-      <CinemaMotion />
       <section
         className="engine-hero"
         id="home"
