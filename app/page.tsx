@@ -182,8 +182,7 @@ export default function Home() {
       >
         <p>BuildWithKoo is the public record of companies being built.</p>
         <p>
-          Across business infrastructure, gaming, food, and media, the work
-          follows one discipline:{" "}
+          Across industries, the work follows one discipline:{" "}
           <strong>
             understand the opportunity, model the system, then build the company
             around it.
