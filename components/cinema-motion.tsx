@@ -18,19 +18,43 @@ export function CinemaMotion() {
       frame = requestAnimationFrame(() => {
         root.style.setProperty(
           "--scene-x",
-          `${(event.clientX / window.innerWidth - 0.5) * 12}px`,
+          `${(event.clientX / window.innerWidth - 0.5) * 18}px`,
         );
         root.style.setProperty(
           "--scene-y",
-          `${(event.clientY / window.innerHeight - 0.5) * 8}px`,
+          `${(event.clientY / window.innerHeight - 0.5) * 12}px`,
         );
       });
     };
     window.addEventListener("pointermove", move, { passive: true });
+    const sections = Array.from(
+      document.querySelectorAll("main > section:not(.engine-hero)"),
+    );
+    sections.forEach((section) => section.classList.add("reveal-section"));
+    const observer =
+      "IntersectionObserver" in window
+        ? new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  observer?.unobserve(entry.target);
+                }
+              });
+            },
+            { rootMargin: "0px 0px -8%", threshold: 0.08 },
+          )
+        : null;
+    if (observer) sections.forEach((section) => observer.observe(section));
+    else sections.forEach((section) => section.classList.add("is-visible"));
     return () => {
       media.removeEventListener("change", sync);
       window.removeEventListener("pointermove", move);
       cancelAnimationFrame(frame);
+      observer?.disconnect();
+      sections.forEach((section) =>
+        section.classList.remove("reveal-section", "is-visible"),
+      );
       root.classList.remove("cinema-paused");
       root.style.removeProperty("--scene-x");
       root.style.removeProperty("--scene-y");
@@ -43,7 +67,7 @@ export function CinemaMotion() {
       aria-pressed={paused}
       onClick={() => setPaused(!paused)}
     >
-      {paused ? "Motion off" : "Pause motion"}{" "}
+      {paused ? "System motion off" : "Pause system motion"}{" "}
       <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
     </button>
   );

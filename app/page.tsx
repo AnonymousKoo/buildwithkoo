@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { CinemaMotion } from "../components/cinema-motion";
 import { ventures } from "../lib/ventures";
 import { partnerCompanies } from "../lib/partners";
@@ -64,75 +63,135 @@ export default function Home() {
     <main id="main-content">
       <CinemaMotion />
       <section
-        className="cinema-hero"
+        className="engine-hero"
         id="home"
         aria-labelledby="portfolio-hero-title"
       >
-        <div className="cinema-scene" aria-hidden="true">
-          <Image
-            src="/images/orbital-hero.webp"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-          />
-        </div>
-        <div className="cinema-shade" aria-hidden="true" />
-        <div className="cinema-topline">
-          <span>Independent thinking. Connected companies.</span>
-          <span>SEKOU TAYLOR / PORTFOLIO</span>
-        </div>
-        <div className="cinema-hero-copy">
-          <p className="cinema-eyebrow">
-            <span /> THE WORLD OF KOO
+        <div className="engine-grid" aria-hidden="true" />
+        <div className="engine-scan" aria-hidden="true" />
+        <div className="engine-copy">
+          <p className="engine-kicker">
+            <span /> VENTURE BUILDER / SYSTEMS ARCHITECT
           </p>
           <h1 id="portfolio-hero-title">
-            I build companies{" "}
-            <span>
-              from the <br />
-              system up.
-            </span>
+            I turn ideas into <span>operating companies.</span>
           </h1>
-          <p className="cinema-description">
-            Ideas deserve more than a launch.
-            <br />
-            They deserve a world that works.
+          <p className="engine-description">
+            I design the business logic, systems, technology, and experiences
+            that move a company from possibility to operation.
           </p>
-          <div className="cinema-actions">
-            <a className="cinema-button" href="#portfolio">
-              View the ventures <span aria-hidden="true">↘</span>
+          <div className="engine-actions">
+            <a className="engine-primary" href="#portfolio">
+              Explore the portfolio <span aria-hidden="true">↘</span>
             </a>
-            <a className="cinema-text-link" href="#approach">
-              How I build <span aria-hidden="true">↗</span>
+            <a className="engine-secondary" href="#approach">
+              See the build method <span aria-hidden="true">→</span>
             </a>
           </div>
+          <div className="engine-proof" aria-label="Portfolio summary">
+            <div>
+              <strong>{String(ventures.length).padStart(2, "0")}</strong>
+              <span>Owned ventures</span>
+            </div>
+            <div>
+              <strong>
+                {String(partnerCompanies.length).padStart(2, "0")}
+              </strong>
+              <span>Partner builds</span>
+            </div>
+            <div>
+              <i />
+              <span>Portfolio active</span>
+            </div>
+          </div>
         </div>
-        <div className="cinema-caption" aria-hidden="true">
-          <span>FIG. 001</span>
-          <span>
-            EVERYTHING STARTS
-            <br />
-            WITH A CORE.
-          </span>
-          <i />
+
+        <div
+          className="venture-engine"
+          aria-label="BuildWithKoo venture system"
+        >
+          <div className="engine-label engine-label-top">
+            <span>LIVE PORTFOLIO MAP</span>
+            <span>BWK / 001</span>
+          </div>
+          <svg
+            className="engine-connections"
+            viewBox="0 0 720 610"
+            aria-hidden="true"
+          >
+            <path d="M360 305 L164 148" />
+            <path d="M360 305 L556 148" />
+            <path d="M360 305 L164 458" />
+            <path d="M360 305 L556 458" />
+            <path className="signal signal-a" d="M360 305 L164 148" />
+            <path className="signal signal-b" d="M360 305 L556 148" />
+            <path className="signal signal-c" d="M360 305 L164 458" />
+            <path className="signal signal-d" d="M360 305 L556 458" />
+            <circle cx="360" cy="305" r="212" />
+            <circle cx="360" cy="305" r="128" />
+          </svg>
+          <div className="engine-core">
+            <span>VENTURE ENGINE</span>
+            <strong>
+              BUILD
+              <br />
+              <em>WITH</em>KOO
+            </strong>
+            <small>Idea → system → company</small>
+          </div>
+          {ventures.map((venture, index) => (
+            <Link
+              className={`engine-node engine-node-${index + 1}`}
+              href={`/ventures/${venture.slug}`}
+              key={venture.slug}
+            >
+              <span>{venture.number}</span>
+              <i aria-hidden="true" />
+              <div>
+                <strong>{venture.name}</strong>
+                <small>{venture.vertical}</small>
+              </div>
+              <b>{venture.status}</b>
+            </Link>
+          ))}
+          <div className="engine-partner-rail">
+            <span>PARTNER BUILD LANE</span>
+            {partnerCompanies.map((company) => (
+              <Link href={`/partners/${company.slug}`} key={company.slug}>
+                {company.name}
+                <i aria-hidden="true">↗</i>
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className="cinema-bottom">
-          <span>SCROLL TO EXPLORE ↓</span>
-          <span>
-            {String(ventures.length).padStart(2, "0")} VENTURES /{" "}
-            {String(partnerCompanies.length).padStart(2, "0")} PARTNER BUILDS
-          </span>
-          <span>IDEA → SYSTEM → COMPANY</span>
+
+        <div
+          className="engine-flow"
+          aria-label="BuildWithKoo company-building flow"
+        >
+          {buildStages.map((stage, index) => (
+            <span key={stage.title}>
+              <b>0{index + 1}</b>
+              {stage.title}
+            </span>
+          ))}
         </div>
       </section>
-      <div className="cinema-introduction">
-        <p>Companies I build and companies I help build.</p>
+
+      <section
+        className="builder-statement"
+        aria-label="BuildWithKoo positioning"
+      >
+        <p>BuildWithKoo is the public record of companies being built.</p>
         <p>
-          Business infrastructure. Gaming. Food. Media.
-          <br />
-          <span>Different worlds. The same conviction.</span>
+          Across business infrastructure, gaming, food, and media, the work
+          follows one discipline:{" "}
+          <strong>
+            understand the opportunity, model the system, then build the company
+            around it.
+          </strong>
         </p>
-      </div>
+      </section>
 
       <section
         className="venture-portfolio"
