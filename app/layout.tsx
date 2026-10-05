@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 import { BrandIdentity } from '@/components/brand-identity'
 import { SiteHeader } from '@/components/site-header'
 import './globals.css'
+import './cinematic.css'
 
 export const metadata: Metadata = {
   title: 'BuildWithKoo | Venture Portfolio',
