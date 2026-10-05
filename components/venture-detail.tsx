@@ -1,3 +1,4 @@
+import { CompanyLogo } from "./company-logo";
 import Link from "next/link";
 import type { Venture } from "../lib/ventures";
 
@@ -46,11 +47,8 @@ export function VentureDetail({ venture }: { venture: Venture }) {
                 <i /> {venture.status}
               </span>
             </div>
-            <div className="venture-route-core" aria-hidden="true">
-              <span>{venture.name.slice(0, 1)}</span>
-              <i />
-              <i />
-              <i />
+            <div className="venture-route-core venture-route-brand">
+              <CompanyLogo slug={venture.slug} />
             </div>
             <ol>
               {venture.system.slice(0, 4).map((step, index) => (

@@ -1,3 +1,4 @@
+import { CompanyLogo } from "../components/company-logo";
 import Link from "next/link";
 import { ventures } from "../lib/ventures";
 import { partnerCompanies } from "../lib/partners";
@@ -144,7 +145,7 @@ export default function Home() {
               key={venture.slug}
             >
               <span>{venture.number}</span>
-              <i aria-hidden="true" />
+              <CompanyLogo slug={venture.slug} compact />
               <div>
                 <strong>{venture.name}</strong>
                 <small>{venture.vertical}</small>
@@ -156,6 +157,7 @@ export default function Home() {
             <span>PARTNER BUILD LANE</span>
             {partnerCompanies.map((company) => (
               <Link href={`/partners/${company.slug}`} key={company.slug}>
+                <CompanyLogo slug={company.slug} compact />
                 {company.name}
                 <i aria-hidden="true">↗</i>
               </Link>
@@ -225,21 +227,9 @@ export default function Home() {
               </header>
 
               <div
-                className={`venture-art venture-art-${venture.slug}`}
-                aria-hidden="true"
+                className={`venture-art venture-art-${venture.slug} brand-showcase`}
               >
-                <span className="art-orbit" />
-                <span className="art-core" />
-                <span className="art-line" />
-                <strong>
-                  {venture.slug === "sekinfra"
-                    ? "S"
-                    : venture.slug === "vyral"
-                      ? "V"
-                      : venture.slug === "tablegrid"
-                        ? "T"
-                        : "H"}
-                </strong>
+                <CompanyLogo slug={venture.slug} />
                 <span className="art-label">
                   {venture.vertical} / {venture.number}
                 </span>
@@ -303,6 +293,7 @@ export default function Home() {
                 </span>
               </header>
 
+              <div className={`partner-brand-showcase partner-brand-${company.slug}`}><CompanyLogo slug={company.slug} /></div>
               <div className="partner-card-body">
                 <p>{company.category}</p>
                 <h3>{company.name}</h3>

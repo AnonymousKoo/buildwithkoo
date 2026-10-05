@@ -2557,3 +2557,40 @@ section[id] {
 .build-board-refined .build-board-action a:hover {
   color: #99ff61 !important;
 }
+
+/* Original company identities, sourced from their own website assets. */
+.company-logo { display: flex; align-items: center; justify-content: center; gap: 16px; position: relative; z-index: 3; width: 100%; min-width: 0; }
+.company-logo img { display: block; width: 100%; height: auto; max-height: 260px; object-fit: contain; }
+.company-logo svg { flex: 0 0 auto; width: 95px; height: 95px; }
+.company-wordmark { color: #f8f7fc; font-size: clamp(24px, 3vw, 44px); font-weight: 800; letter-spacing: -.045em; line-height: 1.05; }
+.company-logo-hummingbird-storyhouse .company-wordmark { font-size: clamp(20px, 2.3vw, 35px); }
+.company-wordmark small { display: block; margin-top: 8px; font-size: .37em; font-weight: 500; letter-spacing: .25em; text-transform: uppercase; }
+.company-logo-sekinfra { background: #fff; padding: 16px; border-radius: 4px; }
+.company-logo-legacy-consulting img, .company-logo-yaadbody img { max-height: 240px; width: auto; max-width: 100%; border-radius: 50%; }
+.brand-showcase { display: flex; align-items: center; justify-content: center; padding: 36px 28px 64px; }
+.brand-showcase > .company-logo { max-width: 480px; }
+.brand-showcase:after { pointer-events: none; }
+.venture-art-hummingbird-storyhouse { background: radial-gradient(ellipse at 50% 40%, #292046, #080b14); }
+.venture-art-vyral { background: radial-gradient(ellipse at 50% 40%, #17364a, #071118); }
+.partner-brand-showcase { min-height: 280px; display: flex; align-items: center; justify-content: center; padding: 30px; border-bottom: 1px solid rgba(255,255,255,.18); background: #0c1b1c; }
+.partner-brand-legacy-consulting { background: radial-gradient(ellipse at center, #163657, #0b1626); }
+.partner-brand-yaadbody { background: radial-gradient(ellipse at center, #32401e, #101b13); }
+.venture-route-core.venture-route-brand { width: calc(100% - 48px); max-width: 440px; height: 190px; border: 0; border-radius: 0; box-shadow: none; }
+.venture-route-brand:before, .venture-route-brand:after { display: none; }
+.venture-route-brand .company-logo img { max-height: 180px; }
+.partner-route-visual > .partner-route-brand { position: relative; top: auto; left: auto; right: auto; padding: 0; border: 0; font: inherit; display: flex; align-items: center; justify-content: center; width: calc(100% - 48px); max-width: 360px; }
+.partner-route-brand .company-logo img { max-height: 210px; }
+.company-logo.company-logo-compact { width: 42px; height: 42px; flex: 0 0 42px; gap: 0; padding: 3px; }
+.company-logo-compact img { max-height: 36px; width: 100%; }
+.company-logo-compact svg { width: 36px; height: 36px; }
+.engine-partner-rail a { display: flex; align-items: center; gap: 8px; }
+.engine-partner-rail .company-logo-compact { width: 28px; height: 28px; flex-basis: 28px; }
+@media (max-width: 760px) {
+  .brand-showcase { height: 280px; padding: 24px 20px 58px; }
+  .company-logo svg { width: 65px; height: 65px; }
+  .company-logo { gap: 10px; }
+  .company-logo-hummingbird-storyhouse .company-wordmark { font-size: clamp(19px, 5vw, 28px); }
+  .partner-brand-showcase { min-height: 240px; }
+  .partner-brand-showcase .company-logo img { max-height: 180px; }
+  .venture-route-core.venture-route-brand { width: calc(100% - 36px); }
+}

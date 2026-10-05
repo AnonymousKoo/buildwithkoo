@@ -1,3 +1,4 @@
+import { CompanyLogo } from "./company-logo";
 import Link from "next/link";
 import type { PartnerCompany } from "../lib/partners";
 
@@ -39,7 +40,7 @@ export function PartnerDetail({ company }: { company: PartnerCompany }) {
                 <i /> {company.status}
               </span>
             </div>
-            <strong>{company.name.slice(0, 1)}</strong>
+            <div className="partner-route-brand"><CompanyLogo slug={company.slug} /></div>
             <p>OPERATOR-LED COMPANY</p>
             <small>BuildWithKoo contribution lane</small>
           </div>
