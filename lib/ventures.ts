@@ -9,7 +9,7 @@ export type VentureOutcome = {
 }
 
 export type Venture = {
-  slug: 'sekinfra' | 'vyral' | 'tablegrid' | 'hummingbird-storyhouse'
+  slug: 'sekinfra' | 'vyral' | 'tablegrid' | 'hummingbird-storyhouse' | 'eos'
   number: string
   name: string
   vertical: string
@@ -356,6 +356,94 @@ export const ventures: Venture[] = [
     now:
       'Building the Storyhouse operating model, client-facing campaign system, growth intelligence loop, and original IP so creative work can move both culture and business.',
     website: 'https://hummingbird-storyhouse.vercel.app',
+  },
+  {
+    slug: 'eos',
+    number: '05',
+    name: 'EOS',
+    vertical: 'E-commerce technology',
+    category: 'E-commerce operating system',
+    status: 'Building',
+    stage: 'Product system / early access',
+    headline: 'Know what is happening. Know what matters. Know what to do next.',
+    summary:
+      'EOS is an e-commerce operating system that brings revenue, marketing, orders, inventory, customers, and financial signals into one operating view so operators can see what matters and act sooner.',
+    audience:
+      'Experienced ecommerce operators, DTC founders, performance-minded teams, and multi-store operators managing real ad spend, inventory, fulfillment, customers, and margin across disconnected tools.',
+    model:
+      'An action-first control layer above the existing commerce stack. EOS connects business signals, evaluates them against operating rules and targets, then surfaces exceptions, priorities, and next actions without forcing the operator to replace every underlying system.',
+    problem:
+      'Ecommerce operators run the company across fragmented systems. Shopify knows orders, ad platforms know spend, support tools know tickets, payment systems know transactions, and fulfillment systems know shipments — but no single tool explains what is happening to the business as a whole.',
+    thesis:
+      'The operator should not have to reconcile five dashboards before making one decision. When commerce data is connected to shared business definitions, rules, thresholds, and an event history, the company can be run from exceptions and priorities instead of constant manual checking.',
+    systemTitle: 'From disconnected signals to operating control.',
+    system: [
+      {
+        title: 'Connect',
+        description: 'Bring store, marketing, payment, customer, inventory, and fulfillment signals into one operating model.',
+      },
+      {
+        title: 'Normalize',
+        description: 'Translate platform-specific data into shared business entities, metrics, targets, and financial definitions.',
+      },
+      {
+        title: 'Detect',
+        description: 'Watch for meaningful changes, threshold crossings, delays, margin pressure, stock risk, and other operating exceptions.',
+      },
+      {
+        title: 'Prioritize',
+        description: 'Rank what needs attention based on business impact instead of forcing the operator to search every dashboard.',
+      },
+      {
+        title: 'Act',
+        description: 'Turn signals into clear next actions tied to campaigns, products, orders, inventory, customers, and business health.',
+      },
+      {
+        title: 'Learn',
+        description: 'Keep a business timeline of important changes so operators can connect decisions and events to what happened next.',
+      },
+    ],
+    outcomesTitle: 'Built to make the business easier to operate.',
+    outcomes: [
+      {
+        title: 'Faster operating decisions',
+        description: 'See the important exception and the relevant context without manually reconciling several systems first.',
+      },
+      {
+        title: 'Margin visibility',
+        description: 'Keep revenue, ad spend, COGS, fees, refunds, and contribution margin in the same operating picture.',
+      },
+      {
+        title: 'Earlier risk detection',
+        description: 'Catch inventory, fulfillment, acquisition-cost, refund, and customer-service problems before they become more expensive.',
+      },
+      {
+        title: 'Actionable marketing control',
+        description: 'Read campaign performance against actual business economics instead of treating ROAS or revenue as the whole story.',
+      },
+      {
+        title: 'Multi-store oversight',
+        description: 'Move from portfolio to store, product, campaign, or order while preserving the larger operating context.',
+      },
+      {
+        title: 'One business history',
+        description: 'Keep important operational events, rule triggers, and changes in a timeline that helps explain why performance moved.',
+      },
+    ],
+    stageNote:
+      'The public EOS experience is currently a product concept and operating-system preview using illustrative sample data. The active build is the product model, integrations, business definitions, rules engine, attention logic, and early operator workflow needed before live customer data is connected.',
+    focus: [
+      'The command-center experience and action-first operating model',
+      'Core ecommerce entities, metrics, targets, and financial definitions',
+      'Initial store, marketing, fulfillment, customer, and payment integrations',
+      'Rules, exception detection, prioritization, and business timeline logic',
+      'Operator testing with serious ecommerce businesses before broad expansion',
+    ],
+    outcome:
+      'An ecommerce operator who can open one system, understand the state of the business, see what needs attention, and move directly into the next important action.',
+    now:
+      'Building the EOS operating model, command center, integration boundary, rules engine, and early-access workflow for experienced ecommerce operators.',
+    website: 'https://runeos.vercel.app',
   },
 ]
 
