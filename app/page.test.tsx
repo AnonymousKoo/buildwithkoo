@@ -41,6 +41,7 @@ describe("BuildWithKoo portfolio homepage", () => {
       "VYRAL",
       "TABLEGRID",
       "HUMMINGBIRD STORYHOUSE",
+      "EOS",
     ]) {
       expect(
         within(portfolio!).getByRole("heading", { name: venture }),
@@ -49,17 +50,18 @@ describe("BuildWithKoo portfolio homepage", () => {
 
     expect(
       within(portfolio!).getAllByRole("link", { name: /Venture brief/i }),
-    ).toHaveLength(4);
+    ).toHaveLength(5);
     const ventureLiveSites = within(portfolio!).getAllByRole("link", {
       name: /Live site/i,
     });
-    expect(ventureLiveSites).toHaveLength(4);
+    expect(ventureLiveSites).toHaveLength(5);
     expect(ventureLiveSites.map((link) => link.getAttribute("href"))).toEqual(
       expect.arrayContaining([
         "https://sekinfra.com",
         "https://vyral-rho.vercel.app",
         "https://tablegrid.vercel.app",
         "https://hummingbird-storyhouse.vercel.app",
+        "https://runeos.vercel.app",
       ]),
     );
     expect(screen.queryByText(/AVUHZ/i)).not.toBeInTheDocument();
@@ -158,6 +160,7 @@ describe("BuildWithKoo portfolio homepage", () => {
       "VYRAL",
       "TABLEGRID",
       "HUMMINGBIRD STORYHOUSE",
+      "EOS",
     ]) {
       expect(
         within(now!).getByRole("heading", { name: venture }),
