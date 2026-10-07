@@ -122,10 +122,12 @@ export default function Home() {
             <path d="M360 305 L556 148" />
             <path d="M360 305 L164 458" />
             <path d="M360 305 L556 458" />
+            <path d="M360 305 L360 86" />
             <path className="signal signal-a" d="M360 305 L164 148" />
             <path className="signal signal-b" d="M360 305 L556 148" />
             <path className="signal signal-c" d="M360 305 L164 458" />
             <path className="signal signal-d" d="M360 305 L556 458" />
+            <path className="signal signal-e" d="M360 305 L360 86" />
             <circle cx="360" cy="305" r="212" />
             <circle cx="360" cy="305" r="128" />
           </svg>

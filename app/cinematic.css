@@ -2594,3 +2594,91 @@ section[id] {
   .partner-brand-showcase .company-logo img { max-height: 180px; }
   .venture-route-core.venture-route-brand { width: calc(100% - 36px); }
 }
+
+
+/* EOS venture */
+.engine-node-5 {
+  left: 50%;
+  top: 5%;
+  margin-left: -90px;
+  animation: node-float 6.8s -3s ease-in-out infinite;
+}
+.venture-art-eos {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(153, 255, 97, 0.18), transparent 28%),
+    radial-gradient(ellipse at 50% 40%, #14231a, #07100f 68%);
+}
+.company-logo-eos {
+  color: #f4fff0;
+}
+.eos-logo-mark {
+  flex: 0 0 auto;
+  width: 78px;
+  height: 78px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(153, 255, 97, 0.42);
+  border-radius: 18px;
+  color: #99ff61;
+  background:
+    linear-gradient(rgba(153, 255, 97, 0.06), rgba(153, 255, 97, 0.015)),
+    #0b1712;
+  box-shadow:
+    inset 0 0 32px rgba(153, 255, 97, 0.06),
+    0 0 40px rgba(153, 255, 97, 0.05);
+  font: 700 28px/1 "DM Mono", monospace;
+}
+.company-logo-compact .eos-logo-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  font-size: 13px;
+}
+.eos-wordmark b {
+  display: block;
+  color: #f6fff2;
+}
+.eos-wordmark small {
+  color: #8ea296;
+  font-family: "DM Mono", monospace;
+  letter-spacing: .14em;
+}
+.venture-profile-eos {
+  --route-accent: #99ff61;
+  --route-accent-rgb: 153, 255, 97;
+  --route-deep: #102117;
+}
+.venture-profile-eos .venture-route-core {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(153, 255, 97, 0.1), transparent 42%),
+    #0a1510;
+}
+.venture-profile-eos .venture-route-core .eos-logo-mark {
+  width: 66px;
+  height: 66px;
+  border-radius: 15px;
+  font-size: 24px;
+}
+@media (max-width: 1100px) {
+  .engine-node-5 {
+    margin-left: -77.5px;
+  }
+}
+@media (max-width: 700px) {
+  .engine-node-5 {
+    top: 4%;
+    margin-left: -65px;
+  }
+  .company-logo-eos .eos-logo-mark {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    font-size: 22px;
+  }
+  .company-logo-compact .eos-logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+}

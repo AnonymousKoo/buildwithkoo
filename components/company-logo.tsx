@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export type CompanySlug = "sekinfra" | "vyral" | "tablegrid" | "hummingbird-storyhouse" | "legacy-consulting" | "yaadbody";
+export type CompanySlug = "sekinfra" | "vyral" | "tablegrid" | "hummingbird-storyhouse" | "eos" | "legacy-consulting" | "yaadbody";
 
 const assets = {
   sekinfra: { src: "/brands/sekinfra.webp", width: 600, height: 155, name: "Sekinfra" },
@@ -20,6 +20,19 @@ export function CompanyLogo({ slug, compact = false }: { slug: CompanySlug; comp
           <path fill="#57dffa" d="m63 19 24-11-14 36-26 26 10-27Z" />
         </svg>
         {!compact ? <span className="company-wordmark">VYRAL</span> : null}
+      </span>
+    );
+  }
+  if (slug === "eos") {
+    return (
+      <span className={className} role="img" aria-label="EOS logo">
+        <span className="eos-logo-mark">E</span>
+        {!compact ? (
+          <span className="company-wordmark eos-wordmark">
+            <b>EOS</b>
+            <small>E-commerce Operating System</small>
+          </span>
+        ) : null}
       </span>
     );
   }
