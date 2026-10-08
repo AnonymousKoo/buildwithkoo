@@ -26,10 +26,33 @@ export function CompanyLogo({ slug, compact = false }: { slug: CompanySlug; comp
   if (slug === "eos") {
     return (
       <span className={className} role="img" aria-label="EOS logo">
-        <span className="eos-logo-mark">E</span>
+        <span
+          className="eos-logo-mark"
+          aria-hidden="true"
+          style={{
+            backgroundImage: "url('https://meo-murex.vercel.app/eos-logo.webp')",
+            backgroundSize: "190% auto",
+            backgroundPosition: "center 24%",
+            backgroundRepeat: "no-repeat",
+            color: "transparent",
+            boxShadow: "0 0 28px rgba(255, 76, 72, 0.28)",
+          }}
+        >
+          E
+        </span>
         {!compact ? (
           <span className="company-wordmark eos-wordmark">
-            <b>EOS</b>
+            <b
+              style={{
+                background:
+                  "linear-gradient(90deg, #ffd35a 0%, #ff7a1a 45%, #ff334f 72%, #ff3b81 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+              }}
+            >
+              EOS
+            </b>
             <small>E-commerce Operating System</small>
           </span>
         ) : null}
