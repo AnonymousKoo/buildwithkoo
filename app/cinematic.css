@@ -2605,11 +2605,12 @@ section[id] {
 }
 .venture-art-eos {
   background:
-    radial-gradient(circle at 50% 42%, rgba(153, 255, 97, 0.18), transparent 28%),
-    radial-gradient(ellipse at 50% 40%, #14231a, #07100f 68%);
+    radial-gradient(circle at 42% 38%, rgba(255, 191, 58, 0.16), transparent 25%),
+    radial-gradient(circle at 64% 54%, rgba(255, 48, 125, 0.13), transparent 30%),
+    radial-gradient(ellipse at 50% 40%, #21100c, #0b070a 68%);
 }
 .company-logo-eos {
-  color: #f4fff0;
+  color: #fff4df;
 }
 .eos-logo-mark {
   flex: 0 0 auto;
@@ -2617,15 +2618,15 @@ section[id] {
   height: 78px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(153, 255, 97, 0.42);
+  border: 1px solid rgba(255, 142, 36, 0.5);
   border-radius: 18px;
-  color: #99ff61;
+  color: #ff8b24;
   background:
-    linear-gradient(rgba(153, 255, 97, 0.06), rgba(153, 255, 97, 0.015)),
-    #0b1712;
+    linear-gradient(145deg, rgba(255, 203, 67, 0.08), rgba(255, 46, 126, 0.035)),
+    #14090d;
   box-shadow:
-    inset 0 0 32px rgba(153, 255, 97, 0.06),
-    0 0 40px rgba(153, 255, 97, 0.05);
+    inset 0 0 32px rgba(255, 104, 30, 0.08),
+    0 0 42px rgba(255, 51, 91, 0.16);
   font: 700 28px/1 "DM Mono", monospace;
 }
 .company-logo-compact .eos-logo-mark {
@@ -2636,22 +2637,40 @@ section[id] {
 }
 .eos-wordmark b {
   display: block;
-  color: #f6fff2;
+  color: #fff3d8;
 }
 .eos-wordmark small {
-  color: #8ea296;
+  color: #a9959c;
   font-family: "DM Mono", monospace;
   letter-spacing: .14em;
 }
 .venture-profile-eos {
-  --route-accent: #99ff61;
-  --route-accent-rgb: 153, 255, 97;
-  --route-deep: #102117;
+  --route-accent: #ff7a1a;
+  --route-accent-rgb: 255, 105, 35;
+  --route-deep: #210a10;
+}
+.venture-profile-eos .venture-profile-hero {
+  background:
+    radial-gradient(circle at 78% 28%, rgba(255, 173, 47, 0.15), transparent 28%),
+    radial-gradient(circle at 18% 62%, rgba(255, 47, 126, 0.09), transparent 34%),
+    #090709;
+}
+.venture-profile-eos .venture-profile-headline {
+  background: linear-gradient(90deg, #ffd45a 0%, #ff7a1a 42%, #ff3b52 70%, #ff3b8f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .venture-profile-eos .venture-route-core {
   background:
-    radial-gradient(circle at 50% 42%, rgba(153, 255, 97, 0.1), transparent 42%),
-    #0a1510;
+    radial-gradient(circle at 44% 38%, rgba(255, 183, 49, 0.12), transparent 38%),
+    radial-gradient(circle at 62% 62%, rgba(255, 47, 126, 0.08), transparent 42%),
+    #12090d;
+}
+.venture-profile-eos .venture-route-visual {
+  background:
+    radial-gradient(circle at 52% 38%, rgba(255, 121, 24, 0.055), transparent 40%),
+    rgba(14, 8, 11, 0.82);
 }
 .venture-profile-eos .venture-route-core .eos-logo-mark {
   width: 66px;
