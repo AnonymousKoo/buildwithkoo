@@ -243,8 +243,23 @@ export default function Home() {
                   {venture.category}
                 </p>
                 <h3>{venture.name}</h3>
-                <p className="venture-card-headline">{venture.headline}</p>
-                <p className="venture-card-outcome-copy">{venture.outcome}</p>
+                {venture.slug === "eos" && venture.website ? (
+                  <a
+                    className="venture-card-description-link"
+                    href={venture.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ color: "inherit", display: "block", textDecoration: "none" }}
+                  >
+                    <p className="venture-card-headline">{venture.headline}</p>
+                    <p className="venture-card-outcome-copy">{venture.outcome}</p>
+                  </a>
+                ) : (
+                  <>
+                    <p className="venture-card-headline">{venture.headline}</p>
+                    <p className="venture-card-outcome-copy">{venture.outcome}</p>
+                  </>
+                )}
               </div>
 
               <footer className="venture-card-footer">
