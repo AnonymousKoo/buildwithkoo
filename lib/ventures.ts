@@ -443,7 +443,7 @@ export const ventures: Venture[] = [
       'An ecommerce operator who can open one system, understand the state of the business, see what needs attention, and move directly into the next important action.',
     now:
       'Building the EOS operating model, command center, integration boundary, rules engine, and early-access workflow for experienced ecommerce operators.',
-    website: 'https://runeos.vercel.app',
+    website: 'https://meo-murex.vercel.app',
   },
 ]
 
