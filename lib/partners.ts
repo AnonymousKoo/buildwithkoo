@@ -58,7 +58,7 @@ export const partnerCompanies: PartnerCompany[] = [
     ],
     outcome:
       'Build a consulting company that can help owners move from formation and funding to stronger operations, smarter systems, and sustainable growth.',
-    website: 'https://www.reveallending.co/id/12985643628',
+    website: 'https://legacy-eta-umber.vercel.app',
   },
   {
     slug: 'yaadbody',
